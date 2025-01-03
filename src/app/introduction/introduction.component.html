@@ -1,0 +1,196 @@
+<nz-card [nzTitle]="title" [nzBordered]="false" class="api-doc">
+    <!-- Overview Section -->
+    <nz-typography>
+      <h2 nz-title>Overview</h2>
+      <nz-descriptions [nzColumn]="1">
+        <nz-descriptions-item nzTitle="Endpoint">
+          <nz-tag [nzColor]="getMethodColor(endpoint.method)">
+            {{ endpoint.method }}
+          </nz-tag>
+          <code class="ml-2">{{ endpoint.url }}</code>
+        </nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Description">
+          <p nz-paragraph>{{ endpoint.description }}</p>
+        </nz-descriptions-item>
+      </nz-descriptions>
+    </nz-typography>
+
+    <!-- Parameters Sections -->
+    <nz-divider></nz-divider>
+    <nz-typography>
+      <h2 nz-title>Parameters</h2>
+      
+      <!-- Path Parameters -->
+      <ng-container *ngIf="endpoint.pathParams?.length">
+        <h3 nz-title>Path Parameters</h3>
+        <nz-table 
+          #pathTable
+          [nzData]="endpoint.pathParams"
+          [nzFrontPagination]="false"
+          [nzShowPagination]="false">
+          <thead>
+            <tr>
+              <th nzWidth="20%">Parameter</th>
+              <th nzWidth="20%">Type</th>
+              <th nzWidth="20%">Required</th>
+              <th nzWidth="40%">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let param of pathTable.data as readonly Parameter[]">
+              <td><code>{{ param.name }}</code></td>
+              <td><code>{{ param.type }}</code></td>
+              <td>
+                <nz-tag [nzColor]="param.required ? 'red' : 'default'">
+                  {{ param.required ? 'Required' : 'Optional' }}
+                </nz-tag>
+              </td>
+              <td>{{ param.description }}</td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </ng-container>
+
+      <!-- Query Parameters -->
+      <ng-container *ngIf="endpoint.queryParams?.length">
+        <h3 nz-title  class="mt-4">Query Parameters</h3>
+        <nz-table 
+          #queryTable
+          [nzData]="endpoint.queryParams"
+          [nzFrontPagination]="false"
+          [nzShowPagination]="false">
+          <thead>
+            <tr>
+              <th nzWidth="20%">Parameter</th>
+              <th nzWidth="20%">Type</th>
+              <th nzWidth="20%">Required</th>
+              <th nzWidth="40%">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let param of queryTable.data as readonly Parameter[]">
+              <td><code>{{ param.name }}</code></td>
+              <td><code>{{ param.type }}</code></td>
+              <td>
+                <nz-tag [nzColor]="param.required ? 'red' : 'default'">
+                  {{ param.required ? 'Required' : 'Optional' }}
+                </nz-tag>
+              </td>
+              <td>{{ param.description }}</td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </ng-container>
+
+      <!-- Header Parameters -->
+      <ng-container *ngIf="endpoint.headerParams?.length">
+        <h3 nz-title  class="mt-4">Headers</h3>
+        <nz-table 
+          #headerTable
+          [nzData]="endpoint.headerParams"
+          [nzFrontPagination]="false"
+          [nzShowPagination]="false">
+          <thead>
+            <tr>
+              <th nzWidth="20%">Header</th>
+              <th nzWidth="20%">Type</th>
+              <th nzWidth="20%">Required</th>
+              <th nzWidth="40%">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let param of headerTable.data as readonly Parameter[]">
+              <td><code>{{ param.name }}</code></td>
+              <td><code>{{ param.type }}</code></td>
+              <td>
+                <nz-tag [nzColor]="param.required ? 'red' : 'default'">
+                  {{ param.required ? 'Required' : 'Optional' }}
+                </nz-tag>
+              </td>
+              <td>{{ param.description }}</td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </ng-container>
+    </nz-typography>
+
+    <!-- Request/Response Section -->
+    <nz-divider></nz-divider>
+    <nz-typography>
+      <h2 nz-title>Request & Response</h2>
+      
+      <!-- Request Body Section -->
+      <ng-container *ngIf="endpoint.requestBody">
+        <h3 nz-title>Request Body</h3>
+        <nz-card class="code-block">
+          <pre><code>{{ endpoint.requestBody | json }}</code></pre>
+        </nz-card>
+      </ng-container>
+
+      <!-- Response Section -->
+      <ng-container *ngIf="endpoint.responseBody">
+        <h3 nz-title class="mt-4">Response Body</h3>
+        <nz-card class="code-block">
+          <pre><code>{{ endpoint.responseBody | json }}</code></pre>
+        </nz-card>
+      </ng-container>
+    </nz-typography>
+
+    <!-- Status Codes Section -->
+    <nz-divider></nz-divider>
+    <nz-typography>
+      <h2 nz-title>Status Codes</h2>
+      <nz-card>
+        <nz-tabset>
+          <nz-tab nzTitle="Success Codes">
+            <nz-table
+              #successTable
+              [nzData]="endpoint.successCodes"
+              [nzFrontPagination]="false"
+              [nzShowPagination]="false">
+              <thead>
+                <tr>
+                  <th nzWidth="15%">Code</th>
+                  <th nzWidth="25%">Type</th>
+                  <th nzWidth="60%">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let status of successTable.data">
+                  <td>
+                    <nz-tag nzColor="success">{{ status.code }}</nz-tag>
+                  </td>
+                  <td>{{ status.type }}</td>
+                  <td>{{ status.description }}</td>
+                </tr>
+              </tbody>
+            </nz-table>
+          </nz-tab>
+          <nz-tab nzTitle="Error Codes">
+            <nz-table
+              #errorTable
+              [nzData]="endpoint.errorCodes"
+              [nzFrontPagination]="false"
+              [nzShowPagination]="false">
+              <thead>
+                <tr>
+                  <th nzWidth="15%">Code</th>
+                  <th nzWidth="25%">Type</th>
+                  <th nzWidth="60%">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let status of errorTable.data">
+                  <td>
+                    <nz-tag nzColor="error">{{ status.code }}</nz-tag>
+                  </td>
+                  <td>{{ status.type }}</td>
+                  <td>{{ status.description }}</td>
+                </tr>
+              </tbody>
+            </nz-table>
+          </nz-tab>
+        </nz-tabset>
+      </nz-card>
+    </nz-typography>
+  </nz-card>
