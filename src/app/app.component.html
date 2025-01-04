@@ -6,10 +6,11 @@
     [(nzCollapsed)]="isCollapsed"
     [nzTrigger]="null">
     <div class="docname">
-      <h4 nz-typography>Abacus Exam Application</h4><br>
+      <h4 nz-typography>Abacus Exam Application</h4>
       <h5  nz-typography nzType="secondary">
+        <span nz-icon nzType="copyright-circle" nzTheme="outline"></span>
         Ankit Borude</h5>
-        
+       
     </div>
     
     <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
@@ -95,7 +96,6 @@
   </nz-sider>
   <nz-layout [ngClass]="{ 'collapsed': isCollapsed }" class="main-layout">
     <nz-header>
-        
         <ul nz-menu nzTheme="light" nzMode="horizontal">
             <li nz-menu-item>
                 <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
