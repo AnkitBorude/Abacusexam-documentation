@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser'
 ;import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { AppComponent } from './app.component';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
-import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -26,6 +25,8 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import {NzTabsModule} from 'ng-zorro-antd/tabs';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { EndpointinfoComponent } from './endpointinfo/endpointinfo.component';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 registerLocaleData(en);
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ registerLocaleData(en);
     NzDividerModule,
     NzTableModule,
     NzTabsModule,
-    NzTypographyModule
+    NzTypographyModule,
+    NzToolTipModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

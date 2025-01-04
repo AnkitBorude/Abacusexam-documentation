@@ -8,11 +8,15 @@
 .app-layout {
   height: 100vh;
   display: flex;
+  background-color: #fff;
 }
 
+
+nz-sider{
+  background-color: #fff;
+}
 .menu-sidebar {
   position: fixed;
-  min-height: 100vh;
   overflow: auto;
   height: 100%;
   left: 0;
@@ -32,15 +36,7 @@
   color: #1890ff;
 }
 
-.sidebar-logo {
-  position: relative;
-  height: 64px;
-  padding-left: 24px;
-  overflow: hidden;
-  line-height: 64px;
-  background: #fff;
-  transition: all 0.3s;
-}
+
 
 .sidebar-logo img {
   display: inline-block;
@@ -48,15 +44,12 @@
   width: 32px;
   vertical-align: middle;
 }
-
-.sidebar-logo h1 {
-  display: inline-block;
-  margin: 0 0 0 20px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
-  font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
-  vertical-align: middle;
+.docname{
+    position: relative;
+    height: 120px;
+    padding-left: 12px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
 }
 
 nz-header {
@@ -80,7 +73,7 @@ nz-content {
 }
 
 .main-layout {
-  margin-left: 256px; /* Matches expanded sidebar width */
+  margin-left: 300px; /* Matches expanded sidebar width */
   transition: margin-left 0.3s; /* Smooth transition when sidebar toggles */
   flex: 1 1 auto;
   display: flex;
