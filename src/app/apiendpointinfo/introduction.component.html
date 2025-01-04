@@ -4,7 +4,7 @@
       <h2 nz-title>Overview</h2>
       <nz-descriptions [nzColumn]="1">
         <nz-descriptions-item nzTitle="Endpoint">
-          <nz-tag [nzColor]="getMethodColor(endpoint.method)">
+          <nz-tag [nzColor]="this.apiendpoints.getMethodColor(endpoint.method)">
             {{ endpoint.method }}
           </nz-tag>
           <code class="ml-2">{{ endpoint.url }}</code>
@@ -25,7 +25,7 @@
         <h3 nz-title>Path Parameters</h3>
         <nz-table 
           #pathTable
-          [nzData]="endpoint.pathParams"
+          [nzData]="endpoint.pathParams!"
           [nzFrontPagination]="false"
           [nzShowPagination]="false">
           <thead>
@@ -56,7 +56,7 @@
         <h3 nz-title  class="mt-4">Query Parameters</h3>
         <nz-table 
           #queryTable
-          [nzData]="endpoint.queryParams"
+          [nzData]="endpoint.queryParams!"
           [nzFrontPagination]="false"
           [nzShowPagination]="false">
           <thead>
