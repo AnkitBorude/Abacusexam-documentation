@@ -95,9 +95,9 @@
     </ul>
   </nz-sider>
   <nz-layout [ngClass]="{ 'collapsed': isCollapsed }" class="main-layout">
-    <nz-header>
-        <ul nz-menu nzTheme="light" nzMode="horizontal">
-            <li nz-menu-item>
+    <nz-header >
+      <div  nz-flex nzVertical='false' style="height: 50%;">
+          <div>
                 <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
            
                     <span class="trigger"
@@ -105,15 +105,30 @@
                        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
                     ></span>
                     </span>
-            </li>
-            <li nz-menu-item>nav 1</li>
-            <li nz-menu-item>nav 2</li>
-            <li nz-menu-item>nav 3</li>
-            
-          </ul>
+          </div>
+          <div style="flex: 1;">
+            <div nz-flex nzVertical="false" nzJustify="end" nzAlign="center">
+
+              <div>
+                <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+           
+                    <span class="trigger"
+                       nz-icon
+                       [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+                    ></span>
+                    </span>
+              </div>
+              
+            </div>
+
+          </div>
+      </div>
+      <div style="height: 20%;">
+        <nz-progress [nzPercent]="this.scrollPercentage" [nzShowInfo]='false' ></nz-progress>
+      </div>
     </nz-header>
     <nz-content>
-      <div class="inner-content">
+      <div class="inner-content" #scrollableDiv (scroll)="onScroll(scrollableDiv)">
         <router-outlet></router-outlet>
       </div>
     </nz-content>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { Parameter,ApiEndpoint,StatusCode } from '../models/apiinfo.model';
 import { ApiEndpointService } from '../services/apiendpoints.service';
 @Component({
@@ -12,10 +12,10 @@ export class IntroductionComponent {
   constructor(public apiendpoints:ApiEndpointService)
   {
     this.endpoint=apiendpoints.getEndpointAt(0);
+     
   }
 
   get title(): string {
     return `${this.endpoint?.method} ${this.endpoint?.url}`;
   }
- 
 }

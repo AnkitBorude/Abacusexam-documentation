@@ -27,6 +27,8 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { EndpointinfoComponent } from './endpointinfo/endpointinfo.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzFlexModule } from 'ng-zorro-antd/flex';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
 registerLocaleData(en);
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ registerLocaleData(en);
     NzTableModule,
     NzTabsModule,
     NzTypographyModule,
-    NzToolTipModule
+    NzToolTipModule,
+    NzFlexModule,
+    NzProgressModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

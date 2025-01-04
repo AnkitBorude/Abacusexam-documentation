@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { ApiEndpointService } from './services/apiendpoints.service';
 
 @Component({
@@ -13,4 +13,13 @@ export class AppComponent {
   }
   isCollapsed = false;
   theme:Boolean=true;
+  scrollPercentage:number=0;
+  onScroll(scrollableDiv: HTMLElement): void {
+    const scrollTop = scrollableDiv.scrollTop;
+    const scrollHeight = scrollableDiv.scrollHeight;
+    const clientHeight = scrollableDiv.clientHeight;
+
+    this.scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+    console.log(this.scrollPercentage);
+  }
 }
