@@ -20,6 +20,5 @@ export class AppComponent {
     const clientHeight = scrollableDiv.clientHeight;
 
     this.scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
-    console.log(this.scrollPercentage);
   }
 }

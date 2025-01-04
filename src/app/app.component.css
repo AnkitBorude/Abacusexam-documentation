@@ -32,6 +32,13 @@ nz-sider{
   transition: all 0.3s, padding 0s;
 }
 
+.header-items{
+  height: 64px;
+  padding: 20px;
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.3s, padding 0s;
+}
 .trigger:hover {
   color: #1890ff;
 }

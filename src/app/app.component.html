@@ -1,19 +1,12 @@
-<nz-layout class="app-layout">
+<nz-layout class="app-layout" >
   <nz-sider class="menu-sidebar"
     nzCollapsible
     nzWidth="300px"
     nzBreakpoint="md"
     [(nzCollapsed)]="isCollapsed"
-    [nzTrigger]="null">
-    <div class="docname">
-      <h4 nz-typography>Abacus Exam Application</h4>
-      <h5  nz-typography nzType="secondary">
-        <span nz-icon nzType="copyright-circle" nzTheme="outline"></span>
-        Ankit Borude</h5>
-       
-    </div>
-    
-    <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+    [nzTrigger]="null"
+    [nzTheme]="theme ? 'dark' : 'light'">
+    <ul nz-menu [nzTheme]="'light'" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-submenu nzOpen nzTitle="Getting Started">
         <ul>
           <li nz-menu-item nzMatchRouter>
@@ -94,7 +87,7 @@
       </li>
     </ul>
   </nz-sider>
-  <nz-layout [ngClass]="{ 'collapsed': isCollapsed }" class="main-layout">
+  <nz-layout [ngClass]="{ 'collapsed': isCollapsed }" class="main-layout" >
     <nz-header >
       <div  nz-flex nzVertical='false' style="height: 50%;">
           <div>
@@ -106,21 +99,35 @@
                     ></span>
                     </span>
           </div>
+          <div>
+            <h4 nz-typography style="padding: 20px;"><strong>API Documentation</strong></h4>
+          </div>
+          <div style="padding: 5px;">
+            <span nz-typography nzType="secondary">
+              <span nz-icon nzType="copyright" ></span>
+              Ankit Borude</span>
+          </div>
           <div style="flex: 1;">
             <div nz-flex nzVertical="false" nzJustify="end" nzAlign="center">
-
               <div>
-                <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-           
-                    <span class="trigger"
-                       nz-icon
-                       [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-                    ></span>
-                    </span>
+                <span class="header-items" nz-icon nzType="heart" nzTheme="twotone" nzTwotoneColor="#eb2f96"></span>
               </div>
-              
+              <div>
+                   <span class="header-items"
+                   nz-icon
+                   [nzType]="'github'"></span>
+              </div>
+              <div>
+                <span class="header-items"
+                nz-icon
+                [nzType]="'linkedin'"></span>
+           </div>
+           <div>
+            <span class="header-items"
+            nz-icon
+            [nzType]="'mail'"></span>
+       </div>
             </div>
-
           </div>
       </div>
       <div style="height: 20%;">
