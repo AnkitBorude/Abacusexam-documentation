@@ -17,7 +17,6 @@ import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
-import { IntroductionComponent } from './apiendpointinfo/introduction.component';
 import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
@@ -33,7 +32,6 @@ registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
-    IntroductionComponent,
     EndpointinfoComponent
   ],
   imports: [

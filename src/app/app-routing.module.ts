@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
-import { IntroductionComponent } from './apiendpointinfo/introduction.component';
 import { EndpointinfoComponent } from './endpointinfo/endpointinfo.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/introduction' },
-  {path:'introduction',component:IntroductionComponent},
+  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
   { path: 'welcome', component:WelcomeComponent},
   {path:'api/:index',component:EndpointinfoComponent}
 ];
