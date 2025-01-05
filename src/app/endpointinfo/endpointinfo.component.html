@@ -121,7 +121,7 @@
       <h2 nz-title>Request & Response</h2>
       
       <!-- Request Body Section -->
-      <ng-container *ngIf="endpoint.requestBody">
+      <ng-container *ngIf="endpoint.requestBody && endpoint.requestBody.length > 0">
         <h3 nz-title>Request Body</h3>
         <nz-card class="code-block">
           <pre><code>{{ endpoint.requestBody | json }}</code></pre>
