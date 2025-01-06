@@ -94,7 +94,38 @@
                     <a routerLink="/api/12">Student all records</a>
                   </li>
                 </ul>
+              </li>
+              <li nz-submenu nzTitle="Admin">
+                <ul>
+                <li nz-menu-item nzMatchRouter nz-tooltip [nzTooltipTitle]='"Login and Get Token"' [nzTooltipColor]="this.apiEndpointsservice.getMethodColor('POST')">
+                  <nz-tag [nzColor]="this.apiEndpointsservice.getMethodColor('POST')">POST</nz-tag>
+                  <a routerLink="/api/13">Login and get Token</a>
                 </li>
+                <li nz-menu-item nzMatchRouter nz-tooltip [nzTooltipTitle]='"Register"' [nzTooltipColor]="this.apiEndpointsservice.getMethodColor('POST')">
+                  <nz-tag [nzColor]="this.apiEndpointsservice.getMethodColor('POST')">POST</nz-tag>
+                  <a routerLink="/api/14">Register</a>
+                </li>
+                <li nz-menu-item nzMatchRouter nz-tooltip [nzTooltipTitle]='"Regenerate Token"' [nzTooltipColor]="this.apiEndpointsservice.getMethodColor('POST')">
+                  <nz-tag [nzColor]="this.apiEndpointsservice.getMethodColor('POST')">POST</nz-tag>
+                  <a routerLink="/api/15">Regenerate Token</a>
+                </li>
+                <li nz-menu-item nzMatchRouter nz-tooltip [nzTooltipTitle]='"Admin by passed token"' [nzTooltipColor]="this.apiEndpointsservice.getMethodColor('GET')">
+                  <nz-tag [nzColor]="this.apiEndpointsservice.getMethodColor('GET')">GET</nz-tag>
+                  <a routerLink="/api/16">Admin by passed token</a>
+                </li>
+                <li nz-menu-item nzMatchRouter nz-tooltip [nzTooltipTitle]='"Self Update Admin"' [nzTooltipColor]="this.apiEndpointsservice.getMethodColor('PATCH')">
+                  <nz-tag [nzColor]="this.apiEndpointsservice.getMethodColor('PATCH')">PATCH</nz-tag>
+                  <a routerLink="/api/17">Self Update Admin</a>
+                </li>
+                <li nz-menu-item nzMatchRouter nz-tooltip [nzTooltipTitle]='"Delete Admin"' [nzTooltipColor]="this.apiEndpointsservice.getMethodColor('DELETE')">
+                  <nz-tag [nzColor]="this.apiEndpointsservice.getMethodColor('DELETE')">DELETE</nz-tag>
+                  <a routerLink="/api/18">Student</a>
+                </li>
+                </ul>
+              </li>
+              <li nz-submenu nzTitle="Exam"></li>
+              <li nz-submenu nzTitle="Questions"></li>
+              <li nz-submenu nzTitle="Result"></li>
         </ul>
       </li>
     </ul>

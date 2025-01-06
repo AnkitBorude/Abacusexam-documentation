@@ -881,7 +881,272 @@ export const endpoints: ApiEndpoint[] =
               "description": "Invalid, expired, or missing admin token"
           }
       ]
-    }
+    },
     
     //admin
+
+    {
+        "url": "/api/v1/admin/login",
+        "method": "POST",
+        "description": "Login an admin using username and password",
+        "pathParams": [],
+        "queryParams": [],
+        "headerParams": [
+            {
+                "name": "Content-Type",
+                "type": "string",
+                "required": true,
+                "description": "Must be application/json"
+            }
+        ],
+        "requestBody": {
+            "username": "admin_username",
+            "password": "admin_password"
+        },
+        "responseBody": {
+            "data": {
+                "message": "Login Successful",
+                "token": "<AccessToken>",
+                "refreshToken": "<RefreshToken>"
+            },
+            "statusCode": 200,
+            "success": true
+        },
+        "successCodes": [
+            {
+                "code": 200,
+                "type": "OK",
+                "description": "Login successful"
+            }
+        ],
+        "errorCodes": [
+            {
+                "code": 400,
+                "type": "Bad Request",
+                "description": "Invalid request body or parameters"
+            },
+            {
+                "code": 404,
+                "type": "Not Found",
+                "description": "Admin not found"
+            },
+            {
+                "code": 401,
+                "type": "Unauthorized",
+                "description": "Wrong password"
+            }
+        ]
+    },
+    {
+        "url": "/admin/register",
+        "method": "POST",
+        "description": "Register a new admin account",
+        "headerParams": [
+            {
+                "name": "Content-Type",
+                "type": "string",
+                "required": true,
+                "description": "Must be application/json"
+            }
+        ],
+        "requestBody": {
+            "fullname": "John Doe",
+            "username": "johndoe123",
+            "email": "johndoe@example.com",
+            "password": "Password123!"
+        },
+        "responseBody": {
+            "data": "Admin Registration Successful",
+            "statusCode": 201,
+            "success": true
+        },
+        "successCodes": [
+            {
+                "code": 201,
+                "type": "Created",
+                "description": "Admin registered successfully"
+            }
+        ],
+        "errorCodes": [
+            {
+                "code": 400,
+                "type": "Bad Request",
+                "description": "Request body validation error"
+            },
+            {
+                "code": 409,
+                "type": "Conflict",
+                "description": "Username or email already exists"
+            }
+        ]
+    },
+    {
+        "url": "/admin/token",
+        "method": "POST",
+        "description": "Regenerate an access token using a valid refresh token for the admin.",
+        "headerParams": [
+            {
+                "name": "Content-Type",
+                "type": "string",
+                "required": true,
+                "description": "Must be application/json"
+            }
+        ],
+        "requestBody": {
+            "refreshToken": "{{admin_refreshToken}}"
+        },
+        "responseBody": {
+            "data": {
+                "message": "New token generated successfully..",
+                "token": "<<accessToken>>"
+            },
+            "success": true
+        },
+        "successCodes": [
+            {
+                "code": 200,
+                "type": "OK",
+                "description": "New access token generated successfully"
+            }
+        ],
+        "errorCodes": [
+            {
+                "code": 400,
+                "type": "Bad Request",
+                "description": "Invalid request body or missing refresh token"
+            },
+            {
+                "code": 404,
+                "type": "Not Found",
+                "description": "Admin with the given refresh token does not exist, has been deleted, or token does not match"
+            },
+            {
+                "code": 401,
+                "type": "Unauthorized",
+                "description": "Refresh token is invalid or expired"
+            }
+        ]
+    },
+    {
+        "url": "/api/v1/admin/me",
+        "method": "GET",
+        "description": "Fetch the currently logged-in admin details",
+        "pathParams": [],
+        "queryParams": [],
+        "headerParams": [
+            {
+                "name": "Authorization",
+                "type": "string",
+                "required": true,
+                "description": "Admin Token in format 'Bearer <AccessToken>'"
+            }
+        ],
+        "requestBody": {},
+        "responseBody": {
+            "data": {
+                "fullname": "Ankit Ravsaheb Borude",
+                "email": "ankitborude21.12@gmail.com",
+                "admin_id": "aRfz61BO"
+            },
+            "statusCode": 200,
+            "success": true
+        },
+        "successCodes": [
+            {
+                "code": 200,
+                "type": "OK",
+                "description": "Admin details fetched successfully"
+            }
+        ],
+        "errorCodes": [
+            {
+                "code": 401,
+                "type": "Unauthorized",
+                "description": "Token is invalid or expired"
+            }
+        ]
+    },
+    {
+        "url": "/admin",
+        "method": "PATCH",
+        "description": "Update specific attributes of the currently logged-in admin. Admin token is required, and access to update attributes is based on the field access matrix.",
+        "headerParams": [
+            {
+                "name": "Authorization",
+                "type": "string",
+                "required": true,
+                "description": "Admin token in the format 'Bearer <AccessToken>'"
+            }
+        ],
+        "requestBody": {
+            "fullname": "John Doe"
+        },
+        "responseBody": {
+            "data": "Admin fullname attributes have been updated Successfully",
+            "statusCode": 200,
+            "success": true
+        },
+        "successCodes": [
+            {
+                "code": 200,
+                "type": "OK",
+                "description": "Attributes updated successfully"
+            }
+        ],
+        "errorCodes": [
+            {
+                "code": 400,
+                "type": "Bad Request",
+                "description": "Request body validation error"
+            },
+            {
+                "code": 404,
+                "type": "Not Found",
+                "description": "Admin not found in the system"
+            },
+            {
+                "code": 401,
+                "type": "Unauthorized",
+                "description": "Attempt to update forbidden attributes or invalid/expired token"
+            }
+        ]
+    },
+    {
+        "url": "/admin",
+        "method": "DELETE",
+        "description": "Delete the current admin account. Performs soft delete if exams with results exist; otherwise, performs hard delete.",
+        "headerParams": [
+            {
+                "name": "Authorization",
+                "type": "string",
+                "required": true,
+                "description": "Admin token in the format 'Bearer <AccessToken>'"
+            }
+        ],
+        "requestBody": {},
+        "responseBody": {
+            "data": "Admin deleted Successfully",
+            "statusCode": 200,
+            "success": true
+        },
+        "successCodes": [
+            {
+                "code": 200,
+                "type": "OK",
+                "description": "Admin deleted successfully"
+            }
+        ],
+        "errorCodes": [
+            {
+                "code": 404,
+                "type": "Not Found",
+                "description": "Admin not found in the system"
+            },
+            {
+                "code": 401,
+                "type": "Unauthorized",
+                "description": "Invalid, expired, or missing admin token"
+            }
+        ]
+    }
 ]
