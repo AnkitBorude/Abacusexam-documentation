@@ -1,1 +1,65 @@
-<p>welcome works!</p>
+<div class="bg-gradient">
+    <div class="container">
+      <!-- Profile Section -->
+      <div class="profile-section">
+        <nz-avatar [nzSize]="96" nzIcon="user" class="profile-avatar"></nz-avatar>
+        <div class="profile-info">
+          <h1 nz-typography>REST API Documentation</h1>
+          <p nz-typography nzType="secondary">Built by John Doe</p>
+          
+          <!-- Social Links -->
+          <div class="social-links">
+            <a nz-button nzType="link">
+              <span nz-icon nzType="github"></span>
+              Github
+            </a>
+            <a nz-button nzType="link">
+              <span nz-icon nzType="linkedin"></span>
+              LinkedIn
+            </a>
+            <a nz-button nzType="link">
+              <span nz-icon nzType="twitter"></span>
+              Twitter
+            </a>
+            <a nz-button nzType="link">
+              <span nz-icon nzType="mail"></span>
+              Contact
+            </a>
+            <a nz-button nzType="link">
+              <span nz-icon nzType="global"></span>
+              Portfolio
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Stats -->
+      <nz-divider></nz-divider>
+      <div nz-row [nzGutter]="16" class="stats-section">
+        <div nz-col [nzXs]="12" [nzMd]="6">
+          <nz-statistic [nzValue]="15" [nzSuffix]="'+'" [nzTitle]="'API Endpoints'"></nz-statistic>
+        </div>
+        <div nz-col [nzXs]="12" [nzMd]="6">
+          <nz-statistic [nzValue]="95" [nzSuffix]="'%'" [nzTitle]="'Test Coverage'"></nz-statistic>
+        </div>
+        <div nz-col [nzXs]="12" [nzMd]="6">
+          <nz-statistic [nzValue]="50" [nzSuffix]="'+'" [nzTitle]="'Test Cases'"></nz-statistic>
+        </div>
+        <div nz-col [nzXs]="12" [nzMd]="6">
+          <nz-statistic [nzValue]="2.0" [nzPrefix]="'v'" [nzTitle]="'Latest Version'"></nz-statistic>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="quick-links">
+        <button nz-button nzType="primary">
+          <span nz-icon nzType="book"></span>
+          Quick Start
+        </button>
+        <button nz-button nzType="primary">
+          <span nz-icon nzType="github"></span>
+          View on GitHub
+        </button>
+      </div>
+    </div>
+  </div>

@@ -28,11 +28,16 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzFlexModule } from 'ng-zorro-antd/flex';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
-    EndpointinfoComponent
+    EndpointinfoComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,9 @@ registerLocaleData(en);
     NzMenuModule,
     NzBreadCrumbModule,
     NzCardModule,
+    NzAvatarModule,
+    NzButtonModule,
+    NzStatisticModule,
     BrowserAnimationsModule,
     NzGridModule,
     AppRoutingModule,

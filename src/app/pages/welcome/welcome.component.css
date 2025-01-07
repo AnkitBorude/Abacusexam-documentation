@@ -1,0 +1,95 @@
+.bg-gradient {
+    background: linear-gradient(to right, #1890ff, #096dd9);
+    color: white;
+    padding: 2rem 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .profile-section {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .profile-section {
+      flex-direction: row;
+      text-align: left;
+      align-items: flex-start;
+    }
+  }
+
+  .profile-avatar {
+    border: 4px solid white;
+  }
+
+  .profile-info h1 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .profile-info p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  button{
+    background-color:#32cd32;
+  }
+
+  .social-links [nz-button] {
+    color: white;
+  }
+
+  .social-links [nz-button]:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  nz-divider {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 1.5rem 0;
+  }
+
+  .stats-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .stats-section ::ng-deep .ant-statistic {
+    text-align: center;
+  }
+
+  .stats-section ::ng-deep .ant-statistic-title {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .stats-section ::ng-deep .ant-statistic-content {
+    color: white;
+  }
+
+  .quick-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .quick-links {
+      justify-content: flex-start;
+    }
+  }
