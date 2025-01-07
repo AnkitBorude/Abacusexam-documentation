@@ -91,3 +91,8 @@ nz-content {
 .collapsed {
   margin-left: 80px; /* Matches collapsed sidebar width */
 }
+.bg-gradient {
+  background: linear-gradient(to right, #1890ff, #096dd9);
+  color: white;
+  padding: 2rem 0;
+}

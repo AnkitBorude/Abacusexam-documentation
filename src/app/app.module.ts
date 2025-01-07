@@ -32,6 +32,7 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 registerLocaleData(en);
 @NgModule({
   declarations: [
@@ -63,7 +64,9 @@ registerLocaleData(en);
     NzTypographyModule,
     NzToolTipModule,
     NzFlexModule,
-    NzProgressModule
+    NzProgressModule,
+    NzCarouselModule,
+
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

@@ -5,20 +5,27 @@
   }
 
   .container {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 1rem;
   }
-
   .profile-section {
     display: flex;
     gap: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-
+  .row-section {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
   @media (min-width: 768px) {
     .profile-section {
       flex-direction: row;
@@ -33,16 +40,34 @@
 
   .profile-info h1 {
     color: white;
-    margin-bottom: 0.5rem;
+    margin: 0.5rem 0.5rem;
     font-size: 2rem;
   }
 
+  .profile-info h2 {
+    color: white;
+    margin: 0.5rem 0.5rem;
+    font-size: 1.5rem;
+  }
   .profile-info p {
     color: rgba(255, 255, 255, 0.85);
     font-size: 1.25rem;
-    margin-bottom: 1rem;
+    margin: 1rem 1rem;
   }
-
+ h2{
+  color: white;
+  margin: 0.5rem 0.5rem;
+  font-size: 1.5rem;
+ }
+ h3{
+  color: white;
+  font-size: 1.25rem;
+ }
+ p{
+    font-size: 1rem;
+    color: white;
+    font-weight: 200;
+ }
   .social-links {
     display: flex;
     gap: 1rem;
@@ -65,9 +90,6 @@
     margin: 1.5rem 0;
   }
 
-  .stats-section {
-    margin-bottom: 1.5rem;
-  }
 
   .stats-section ::ng-deep .ant-statistic {
     text-align: center;
