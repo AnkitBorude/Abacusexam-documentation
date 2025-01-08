@@ -5,17 +5,17 @@
         <nz-avatar [nzSize]="96" nzIcon="user" class="profile-avatar"></nz-avatar>
         <div class="profile-info">
           <h1 nz-typography style="margin-bottom: 0;">Abacus Exam Application</h1>
-          <h2 nz-typography>REST API Documentation</h2>
           <p nz-typography nzType="secondary">Built by Ankit Borude</p>
-          
         </div>
       </div>
+      <nz-divider></nz-divider>
       <nz-card class="row-section" nzBorderless style="background-color: inherit; padding: 0;">
         <p nz-typography style="color: #fff; font-size: 1rem; margin: 0;">The Abacus Exam Web API is a comprehensive backend solution designed to streamline the management and evaluation of Abacus-based exams. 
         This RESTful API provides a robust, scalable, and secure platform for handling exam-related operations, enabling developers to integrate its functionality into 
         various front-end applications or third-party systems.</p>
       </nz-card>
-      <div style="margin-top: 1.5rem;" class="row-section">
+      <nz-divider></nz-divider>
+      <div style="margin-top: 1.5rem; text-align: center;" class="row-section">
       <nz-carousel style="max-width: 800px; height: 300px;" [nzAutoPlay]="'true'" [nzAutoPlaySpeed]="5000">
         <div nz-carousel-content>
           <div nz-row [nzGutter]="16"  style="text-align: center;" class="stats-section">
@@ -115,10 +115,79 @@
         </div>
       </nz-carousel>
       </div>
-      <!-- Project Stats -->
       <nz-divider></nz-divider>
+      <nz-card class="row-section" nzBorderless style="background-color: inherit; padding: 0;">
+        <h2 nz-typography>Core Features</h2>
+        <div nz-typography class="data-container">
+          <h3 nz-typography>Purpose</h3>
+          <p>The Abacus Exam API is a comprehensive platform designed to streamline mathematical assessment and practice for educational institutions. While primarily focused on supporting Abacus learning programs, it extends its utility to general mathematical education from grades 1 through 10. This API enables automated exam creation, administration, and performance analytics, eliminating the need for manual question generation and assessment management.</p>
       
-
+          <h3 nz-typography>Automated Question Generation</h3>
+          <ul>
+              <li>Dynamic generation of mathematics questions based on configurable parameters</li>
+              <li>Customizable difficulty levels through question configuration</li>
+              <li>Intelligent MCQ option generation with logically distributed answers</li>
+              <li>Support for both practice sessions and formal assessments</li>
+          </ul>
+        </div>
+        <nz-divider></nz-divider>
+        <div nz-typography class="data-container">
+          <h3 nz-typography>Administrative Control</h3>
+          <ul>
+              <li>Complete exam lifecycle management (Create, Read, Update, Delete)</li>
+              <li>Student enrollment and management capabilities</li>
+              <li>Granular access control ensuring exam creators maintain exclusive authority</li>
+              <li>Comprehensive analytics endpoint for tracking student and exam performance</li>
+          </ul>
+        </div>
+        <nz-divider></nz-divider>
+          <div nz-typography class="data-container">
+          <h3 nz-typography>Student Engagement</h3>
+          <ul>
+              <li>Access to practice and assessment examinations</li>
+              <li>Immediate feedback and result visualization</li>
+              <li>Progress tracking and performance history</li>
+              <li>Platform-independent access</li>
+          </ul>
+          </div>
+          <nz-divider></nz-divider>
+          <div nz-typography class="data-container">
+          <h3 nz-typography>Technical Integration</h3>
+          <ul>
+              <li>RESTful API design supporting cross-platform integration</li>
+              <li>Flexible architecture allowing integration with any frontend application</li>
+              <li>Secure authentication and authorization mechanisms</li>
+              <li>Scalable solution suitable for various institutional sizes</li>
+          </ul>
+          </div>
+          <nz-divider></nz-divider>
+          <div nz-typography class="data-container">
+          <h3 nz-typography style="color: #fff;">Target Users</h3>
+          <h4 nz-typography style="color: #fff;">Primary Users:</h4>
+          <ul>
+              <li>Students learning Abacus, mental math, or Vedic mathematics</li>
+              <li>Educational institutions focusing on mathematical skill development</li>
+              <li>Teachers and administrators managing mathematical assessments</li>
+          </ul>
+      
+          <h4 nz-typography style="color: #fff;">Secondary Users:</h4>
+          <ul>
+              <li>Schools seeking to enhance their mathematical assessment capabilities</li>
+              <li>Educational technology providers looking to integrate examination capabilities</li>
+              <li>Tutorial centers focusing on mathematical skill development</li>
+          </ul>
+          </div>
+          <nz-divider></nz-divider>
+          <div nz-typography class="data-container">
+          <h3 nz-typography>Value Proposition</h3>
+          <p>This API addresses the critical need for automated, scalable, and reliable mathematical assessment tools.
+             By automating question generation and providing comprehensive analytics, it reduces administrative burden while 
+             ensuring consistent quality in mathematical education assessment. 
+             Its flexibility makes it valuable for both specialized Abacus training centers and general educational
+              institutions looking to enhance their mathematical assessment capabilities.</p>
+          </div>
+          <nz-divider></nz-divider>
+      </nz-card>
       <!-- Quick Links -->
       <div class="quick-links">
         <button nz-button nzType="primary" nzShape="round">

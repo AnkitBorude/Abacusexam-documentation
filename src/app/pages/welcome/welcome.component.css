@@ -20,11 +20,11 @@
   .row-section {
     display: flex;
     gap: 1.5rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    text-align: center;
   }
   @media (min-width: 768px) {
     .profile-section {
@@ -68,6 +68,14 @@
     color: white;
     font-weight: 200;
  }
+.data-container
+{
+  font-size: 1rem;
+  color: white;
+  font-weight: 200;
+  padding:0rem;
+  margin-top: 1.5rem;
+}
   .social-links {
     display: flex;
     gap: 1rem;

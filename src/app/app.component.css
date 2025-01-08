@@ -34,16 +34,22 @@ nz-sider{
 
 .header-items{
   height: 64px;
-  padding: 20px;
+  padding: 10px;
+  padding-right: 20px;
   font-size: 32px;
   cursor: pointer;
   transition: all 0.3s, padding 0s;
 }
+.header-items:hover{
+  transform: scale(1.5);
+}
 .trigger:hover {
   color: #1890ff;
 }
-
-
+#give-love{
+ fill: #eb2f96;
+ color: #eb2f96;
+}
 
 .sidebar-logo img {
   display: inline-block;
