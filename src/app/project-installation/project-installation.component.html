@@ -99,3 +99,103 @@
           </nz-table>
 </div>
 </div>
+<nz-divider></nz-divider>
+<h2 nz-typography>Installation</h2>
+<div nz-row [nzGutter]="2" [nzJustify]="'center'" [nzAlign]="'middle'">
+  <div nz-col [nzSpan]="24" [align]="'center'">
+      <nz-divider></nz-divider>
+      <nz-steps [nzCurrent]="current" nzDirection="vertical">
+        <nz-step nzTitle=" Clone the Repository" [nzDescription]="mytemplet1">
+          <ng-template #mytemplet1>
+            <nz-card  style="background-color: rgb(0, 8, 15); color: white;">
+              <p nz-typography style="color: inherit;">
+                #Clone the Repository<br>
+                <code>git clone git&#64;github.com:AnkitBorude/abacus-exam-backend.git</code><br>
+                
+                # Navigate to project directory<br>
+            
+                <code>cd abacus-exam-backend</code></p>
+              <div *ngIf="current!=0;else nextbuttonTemplet"></div>
+            </nz-card>
+            </ng-template>
+        </nz-step>
+        <nz-step nzTitle="Install Dependencies" [nzDescription]="mytemplet2">
+          <ng-template #mytemplet2>
+            <nz-card  style="background-color: rgb(0, 8, 15); color: white;">
+              <p nz-typography style="color: inherit;">
+                #Install Dependencies<br>
+                <code>npm install</code><br>
+                <div *ngIf="current!=1;else nextbuttonTemplet"></div>
+            </nz-card>
+            </ng-template>
+        </nz-step>
+        <nz-step nzTitle="Environment Configuration" [nzDescription]="mytemplet3">
+          <ng-template #mytemplet3>
+            <nz-card  style="background-color: rgb(0, 8, 15); color: white;">
+              <p nz-typography style="color: inherit;">
+                ##Create .env file<br>
+                <code>touch .env</code><br>
+                Add environment variables and their respective values to the .env file,
+                using the table from the previous section as a reference.
+                Configure the variables according to the development or production environment.
+                ex.<br>
+                NODE_ENV=development<br>
+                PORT=3000<br>
+                .<br>
+                .<br>
+              </p>
+              <div *ngIf="current!=2;else nextbuttonTemplet"></div>
+            </nz-card>
+            </ng-template>
+        </nz-step>
+        <nz-step nzTitle="Database Setup For Local Development" [nzDescription]="mytemplet4">
+          <ng-template #mytemplet4>
+            <nz-card  style="background-color: rgb(0, 8, 15); color: white;">
+              <p nz-typography style="color: inherit;">
+                # Start MongoDB locally<br>
+                <code>mongod</code><br><br>
+
+                # If using MongoDB Compass, connect using:<br>
+                <code>mongodb://localhost:27017</code>
+              </p>
+              <div *ngIf="current!=3;else nextbuttonTemplet"></div>
+            </nz-card>
+            </ng-template>
+        </nz-step>
+        <nz-step nzTitle="Start Development/Production Server" [nzDescription]="mytemplet5">
+          <ng-template #mytemplet5>
+            <nz-card  style="background-color: rgb(0, 8, 15); color: white;">
+              <p nz-typography style="color: inherit;">
+                # # Start server with nodemon (auto-reload) local developement<br>
+                <code>npm run dev</code><br><br>
+
+                # # Start server on poduction server<br>
+                <code>npm run start</code><br><br>
+
+                # # # Using PM2<br>
+                <code>pm2 start src/index.js --name abacus-exam-api</code>
+              </p>
+              <div *ngIf="current!=4;else nextbuttonTemplet"></div>
+            </nz-card>
+            </ng-template>
+        </nz-step>
+      </nz-steps>
+  </div>
+  <ng-template #nextbuttonTemplet>
+    <button 
+      nz-button 
+      nzType="default"
+      (click)="pre()" 
+        *ngIf="current > 0" >
+      <span>Previous</span>
+    </button>
+    <button style="margin-left: 1rem;"
+      nz-button 
+      nzType="primary"
+      (click)="next()" 
+        *ngIf="current < 10"
+     >
+      <span>Next</span>
+    </button>
+  </ng-template>
+</div>

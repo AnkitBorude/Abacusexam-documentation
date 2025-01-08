@@ -39,6 +39,8 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 import { CoreProjectComponent } from './core-project/core-project.component';
 import { ProjectStructureComponent } from './project-structure/project-structure.component';
 import { ProjectInstallationComponent } from './project-installation/project-installation.component';
+import { NzStepsModule } from 'ng-zorro-antd/steps';
+import { NzAffixModule } from 'ng-zorro-antd/affix';
 registerLocaleData(en);
 @NgModule({
   declarations: [
@@ -77,7 +79,9 @@ registerLocaleData(en);
     NzCarouselModule,
     NzListModule,
     NzCollapseModule,
-    NzTimelineModule
+    NzTimelineModule,
+    NzStepsModule,
+    NzAffixModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
