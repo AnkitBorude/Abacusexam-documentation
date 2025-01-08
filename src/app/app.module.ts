@@ -35,6 +35,7 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import {NzCollapseModule} from 'ng-zorro-antd/collapse';
 import {NzListModule} from 'ng-zorro-antd/list';
+import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 import { CoreProjectComponent } from './core-project/core-project.component';
 import { ProjectStructureComponent } from './project-structure/project-structure.component';
 import { ProjectInstallationComponent } from './project-installation/project-installation.component';
@@ -75,8 +76,8 @@ registerLocaleData(en);
     NzProgressModule,
     NzCarouselModule,
     NzListModule,
-    NzCollapseModule
-
+    NzCollapseModule,
+    NzTimelineModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
