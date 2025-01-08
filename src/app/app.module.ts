@@ -33,12 +33,20 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import {NzCollapseModule} from 'ng-zorro-antd/collapse';
+import {NzListModule} from 'ng-zorro-antd/list';
+import { CoreProjectComponent } from './core-project/core-project.component';
+import { ProjectStructureComponent } from './project-structure/project-structure.component';
+import { ProjectInstallationComponent } from './project-installation/project-installation.component';
 registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
     EndpointinfoComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    CoreProjectComponent,
+    ProjectStructureComponent,
+    ProjectInstallationComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +74,8 @@ registerLocaleData(en);
     NzFlexModule,
     NzProgressModule,
     NzCarouselModule,
+    NzListModule,
+    NzCollapseModule
 
   ],
   providers: [

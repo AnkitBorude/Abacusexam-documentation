@@ -1,0 +1,116 @@
+<div nz-row [nzGutter]="24">
+    <div nz-col [nzSpan]="24">
+      <nz-card nzTitle="Technology Stack">
+        <nz-list [nzBordered]="false">
+          <nz-list-item>Runtime Environment: Node.js with Express.js framework</nz-list-item>
+          <nz-list-item>Database: MongoDB with Mongoose ORM</nz-list-item>
+          <nz-list-item>Authentication: JWT (jsonwebtoken) with bcrypt for password hashing</nz-list-item>
+          <nz-list-item>Validation: Joi for request validation</nz-list-item>
+          <nz-list-item>PDF Generation: jsPDF with autotable plugin</nz-list-item>
+          <nz-list-item>Logging: Winston and Morgan for HTTP request logging</nz-list-item>
+          <nz-list-item>Security: Helmet middleware for HTTP headers security</nz-list-item>
+        </nz-list>
+      </nz-card>
+    </div>
+  </div>
+  
+  <div nz-row [nzGutter]="24" class="mt-4">
+    <div nz-col [nzSpan]="24">
+      <nz-card nzTitle="Project Structure">
+        <nz-collapse>
+          <nz-collapse-panel nzHeader="Entry Points">
+            <nz-list [nzBordered]="false">
+              <nz-list-item>
+                <span nz-typography><strong>index.js:</strong> Server initialization and database health checks</span>
+              </nz-list-item>
+              <nz-list-item>
+                <span nz-typography><strong>app.js:</strong> Middleware configuration and application setup</span>
+              </nz-list-item>
+            </nz-list>
+          </nz-collapse-panel>
+          
+          <nz-collapse-panel nzHeader="Environment Configuration">
+            <nz-list [nzBordered]="false">
+              <nz-list-item>Development and Production environments supported</nz-list-item>
+              <nz-list-item>Environment variables using dotenv</nz-list-item>
+              <nz-list-item>Configuration management using config package</nz-list-item>
+            </nz-list>
+          </nz-collapse-panel>
+        </nz-collapse>
+      </nz-card>
+    </div>
+  </div>
+  
+  <div nz-row [nzGutter]="24" class="mt-4">
+    <div nz-col [nzSpan]="24">
+      <nz-card nzTitle="Core Components">
+        <nz-tabset>
+          <nz-tab nzTitle="API Layer">
+            <nz-list [nzBordered]="false">
+              <nz-list-item>Express.js routes for HTTP endpoint handling</nz-list-item>
+              <nz-list-item>Joi schema validation for request payloads</nz-list-item>
+              <nz-list-item>JWT middleware for authentication</nz-list-item>
+            </nz-list>
+          </nz-tab>
+  
+          <nz-tab nzTitle="Database Layer">
+            <nz-list [nzBordered]="false">
+              <nz-list-item>MongoDB for data persistence</nz-list-item>
+              <nz-list-item>Mongoose schemas for data modeling</nz-list-item>
+              <nz-list-item>Database backup/restore functionality</nz-list-item>
+            </nz-list>
+          </nz-tab>
+  
+          <nz-tab nzTitle="Security Layer">
+            <nz-list [nzBordered]="false">
+              <nz-list-item>Helmet for security headers</nz-list-item>
+              <nz-list-item>bcrypt for password encryption</nz-list-item>
+              <nz-list-item>JWT for secure token-based authentication</nz-list-item>
+            </nz-list>
+          </nz-tab>
+  
+          <nz-tab nzTitle="Utility Services">
+            <nz-list [nzBordered]="false">
+              <nz-list-item>Random number generation (random-js)</nz-list-item>
+              <nz-list-item>PDF report generation (jspdf)</nz-list-item>
+              <nz-list-item>Logging system (winston, morgan)</nz-list-item>
+            </nz-list>
+          </nz-tab>
+        </nz-tabset>
+      </nz-card>
+    </div>
+  </div>
+  
+  <div nz-row [nzGutter]="24" class="mt-4">
+    <div nz-col [nzSpan]="12">
+      <nz-card nzTitle="Development Tools">
+        <nz-collapse>
+          <nz-collapse-panel nzHeader="Code Quality">
+            <nz-list [nzBordered]="false">
+              <nz-list-item>ESLint for code linting</nz-list-item>
+              <nz-list-item>Prettier for code formatting</nz-list-item>
+              <nz-list-item>Nodemon for development auto-reload</nz-list-item>
+            </nz-list>
+          </nz-collapse-panel>
+          
+          <nz-collapse-panel nzHeader="Database Management">
+            <nz-list [nzBordered]="false">
+              <nz-list-item>Custom scripts for database backup (db:dump)</nz-list-item>
+              <nz-list-item>Database restoration utilities (db:restore)</nz-list-item>
+            </nz-list>
+          </nz-collapse-panel>
+        </nz-collapse>
+      </nz-card>
+    </div>
+  
+    <div nz-col [nzSpan]="12">
+      <nz-card nzTitle="Performance Monitoring">
+        <nz-list [nzBordered]="false">
+          <nz-list-item>Profiling capabilities (--prof flag)</nz-list-item>
+          <nz-list-item>HTTP request logging with Morgan</nz-list-item>
+          <nz-list-item>Application-level logging with Winston</nz-list-item>
+        </nz-list>
+      </nz-card>
+    </div>
+  </div>
+<p nz-typography>Ankit Borude</p>

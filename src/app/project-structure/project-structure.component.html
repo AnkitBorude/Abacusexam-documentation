@@ -1,0 +1,142 @@
+<div nz-row [nzGutter]="24">
+    <div nz-col [nzSpan]="24">
+      <nz-card nzTitle="Project File Structure">
+
+    <div style="font-family: monospace; padding: 20px;">
+      <div> <span nz-icon nzType="folder"></span>AnkitBorude-abacus-exam-backend/</div>
+      <div style="padding-left: 20px;">
+        <span nz-icon nzType="file"></span> readme.md<br>
+        <span nz-icon nzType="file"></span>  LICENSE<br>
+        <span nz-icon nzType="file"></span> eslint.config.js<br>
+        <span nz-icon nzType="file"></span> package.json<br>
+        <span nz-icon nzType="file"></span> .prettierignore<br>
+        <span nz-icon nzType="file"></span> .prettierrc<br>
+          
+        <span nz-icon nzType="folder"></span> config/<br>
+        <span nz-icon nzType="folder"></span> logger/<br>
+        <span nz-icon nzType="folder"></span> public/<br>
+        <span nz-icon nzType="folder"></span> src/<br>
+          <div style="padding-left: 20px;">
+            <span nz-icon nzType="file"></span>app.js<br>
+            <span nz-icon nzType="file"></span>constants.js<br>
+            <span nz-icon nzType="file"></span>index.js<br>
+              
+              <span nz-icon nzType="folder"></span>controllers/<br>
+  
+              <span nz-icon nzType="folder"></span> core/<br>
+              <div style="padding-left: 20px;">
+                <span nz-icon nzType="file"></span> mcqGenerator.js<br>
+                  <span nz-icon nzType="folder"></span>lib/<br>
+              </div>
+              <span nz-icon nzType="folder"></span> db/<br>
+              <span nz-icon nzType="folder"></span> middlewares/<br>
+              <span nz-icon nzType="folder"></span> models/<br>
+              <span nz-icon nzType="folder"></span> pdftemplets/<br>
+              <span nz-icon nzType="folder"></span> routes/<br>
+              <span nz-icon nzType="folder"></span> utils/<br>
+              <div style="padding-left: 20px;">   
+                <span nz-icon nzType="folder"></span> exam/<br>
+                <span nz-icon nzType="folder"></span> publicId/<br>
+              </div>
+          </div>
+      </div>
+  </div>
+</nz-card>
+</div>
+</div>
+<nz-divider></nz-divider>
+<div nz-row [nzGutter]="24" class="mt-4">
+    <div nz-col [nzSpan]="24">
+      <nz-card nzTitle="Project Structure">
+        <nz-list nzBordered="true">
+            <nz-list-item>
+                <span nz-typography><strong><code>readme.md: </code></strong>Documentation file explaining project setup, features, and usage instructions</span>
+            </nz-list-item>
+            <nz-list-item>
+                <span nz-typography><strong><code>LICENSE</code></strong> Legal document specifying how the code can be used and distributed</span>
+            </nz-list-item>
+            <nz-list-item>
+                <span nz-typography><strong><code>eslint.config.js:</code></strong>Configuration for ESLint to maintain code quality and style consistency
+                </span>
+            </nz-list-item>
+            <nz-list-item>
+                <span nz-typography><strong><code>package.json</code></strong>Project metadata and dependencies management file</span>
+            </nz-list-item>
+            <nz-list-item>
+                <span nz-typography><strong><code>.prettierignore:</code></strong>Specifies which files Prettier should not format</span>
+            </nz-list-item>
+            <nz-list-item>
+                <span nz-typography><strong><code>.prettierrc</code></strong>Configuration for Prettier code formatter</span>
+            </nz-list-item>
+            <nz-list-item>
+                <nz-collapse>
+                <nz-collapse-panel nzHeader="Root Level Directories">
+                  <nz-list [nzBordered]="false">
+                    <nz-list-item>
+                        <span nz-typography><strong><code>config/</code></strong> Environment-specific configuration files for development and production</span>
+                    </nz-list-item>
+                    <nz-list-item>
+                        <span nz-typography><strong><code>logger/</code></strong>Custom logging implementation for different environments</span>
+                    </nz-list-item>
+                    <nz-list-item>
+                        <span nz-typography><strong><code>public/</code></strong> Static files and assets accessible to the public</span>
+                    </nz-list-item>
+                    <nz-list-item>
+                        <span nz-typography><strong><code>src/</code></strong>Main source code directory containing all application logic</span>
+                    </nz-list-item>
+                  </nz-list>
+                </nz-collapse-panel> 
+                 </nz-collapse>
+              </nz-list-item>
+              <nz-list-item>
+                <nz-collapse>
+                  <nz-collapse-panel nzHeader="src/ Level Files and Directories">
+                    <nz-list [nzBordered]="false">
+                      <nz-list-item>
+                          <span nz-typography><strong><code>app.js</code></strong>Express application setup and middleware configuration</span>
+                      </nz-list-item>
+                      <nz-list-item>
+                          <span nz-typography><strong><code>index.js</code></strong>Application entry point handling server startup and database connection</span>
+                      </nz-list-item>
+                      <nz-list-item>
+                          <span nz-typography><strong><code>constants.js</code></strong>Global constants and configuration values</span>
+                      </nz-list-item>
+                      <nz-list-item>
+                          <span nz-typography><strong><code>controllers/</code></strong>HTTP request handlers implementing business logic for each route</span>
+                      </nz-list-item>
+                      <nz-list-item>
+                        <span nz-typography><strong><code>core/</code></strong>Core business logic for MCQ generation and mathematical operations</span>
+                    </nz-list-item>
+                    <nz-list-item>
+                      <span nz-typography><strong><code>core/mcqGenerator.js</code></strong>Main service for generating multiple choice questions</span>
+                  </nz-list-item>
+                  <nz-list-item>
+                    <span nz-typography><strong><code>core/lib/</code></strong>Supporting utilities for MCQ generation, expressions, and calculations                    </span>
+                </nz-list-item>
+                <nz-list-item>
+                  <span nz-typography><strong><code>db/</code></strong>Database connection and health check implementation                  </span>
+              </nz-list-item>
+                 <nz-list-item>
+                <span nz-typography><strong><code>middlewares/</code></strong> Request validation and authentication middleware</span>
+                  </nz-list-item>
+                  <nz-list-item>
+                    <span nz-typography><strong><code>models/</code></strong>MongoDB schema definitions and models</span>
+                      </nz-list-item>
+                      <nz-list-item>
+                        <span nz-typography><strong><code>pdftemplets/</code></strong>PDF generation templates for reports and results</span>
+                          </nz-list-item>
+                          <nz-list-item>
+                            <span nz-typography><strong><code>routes/</code></strong>API route definitions and endpoint handlers</span>
+                              </nz-list-item>
+                              <nz-list-item>
+                                <span nz-typography><strong><code>utils/</code></strong>Utility functions and helper modules</span>
+                                  </nz-list-item>
+                    </nz-list>
+                  </nz-collapse-panel> 
+                   </nz-collapse>
+              </nz-list-item>
+        </nz-list>
+        
+</nz-card>
+</div>
+</div>
