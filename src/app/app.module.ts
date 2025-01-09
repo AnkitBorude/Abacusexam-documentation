@@ -42,7 +42,8 @@ import { ProjectInstallationComponent } from './project-installation/project-ins
 import { NzStepsModule } from 'ng-zorro-antd/steps';
 import { NzAffixModule } from 'ng-zorro-antd/affix';
 import { KeyFeaturesComponent } from './key-features/key-features.component';
-
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
 registerLocaleData(en);
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ registerLocaleData(en);
     CoreProjectComponent,
     ProjectStructureComponent,
     ProjectInstallationComponent,
-    KeyFeaturesComponent
+    KeyFeaturesComponent,
+    ComingSoonComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +86,8 @@ registerLocaleData(en);
     NzCollapseModule,
     NzTimelineModule,
     NzStepsModule,
-    NzAffixModule
+    NzAffixModule,
+    NzPopoverModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

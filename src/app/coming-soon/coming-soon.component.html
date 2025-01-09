@@ -1,1 +1,19 @@
-<p>coming-soon works!</p>
+<div style="background-image: url(https://img.freepik.com/free-photo/beautiful-shot-milky-way-hill-with-few-trees-night_181624-32562.jpg); height: 100%; background-repeat: no-repeat; background-size:100% 100%;">
+<div nz-row [nzGutter]="10" [nzJustify]="'center'"  style="height: 100%;">
+    <div nz-col [nzSpan]="24" style="padding: 2rem; text-align: center;" >
+        <h1 style="font-size: 3rem; color: white;" nz-typography><span nz-icon nzType="experiment"></span>Coming soo0oon..</h1>
+        <h3 nz-typography style="color: white; margin-top: 0;" >
+            Work in progress: fueled by coffee, passion,<br>
+            and a few 'why isn’t this working?' moments.
+        </h3>
+        <button nz-button  nz-popover nzPopoverTitle="Under construction" [nzPopoverContent]="contentTemplate" nzPopoverTrigger="click" nzPopoverPlacement="bottom">Click here to know More</button>
+    </div>
+</div>
+</div>
+<ng-template #contentTemplate>
+    <div>
+      <p nz-typography>Under heavy construction! (Translation: I'm debugging like crazy.)<br>
+      Made with <span nz-icon nzType="heart" nzTheme="fill" style="color: #eb2f96;;"></span> By Ankit Borude
+      </p>
+    </div>
+  </ng-template>
