@@ -41,6 +41,8 @@ import { ProjectStructureComponent } from './project-structure/project-structure
 import { ProjectInstallationComponent } from './project-installation/project-installation.component';
 import { NzStepsModule } from 'ng-zorro-antd/steps';
 import { NzAffixModule } from 'ng-zorro-antd/affix';
+import { KeyFeaturesComponent } from './key-features/key-features.component';
+
 registerLocaleData(en);
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ registerLocaleData(en);
     WelcomeComponent,
     CoreProjectComponent,
     ProjectStructureComponent,
-    ProjectInstallationComponent
+    ProjectInstallationComponent,
+    KeyFeaturesComponent
   ],
   imports: [
     BrowserModule,

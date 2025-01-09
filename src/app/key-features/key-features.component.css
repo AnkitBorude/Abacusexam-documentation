@@ -1,0 +1,15 @@
+.bg-gradient {
+    background: linear-gradient(to right, #1890ff, #096dd9);
+    color: white;
+    padding: 2rem 2rem;
+  }
+
+nz-card{
+    height: 100%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+nz-card:hover{
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for a floating effect */
+    cursor: pointer;
+}
