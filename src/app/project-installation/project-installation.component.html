@@ -1,143 +1,158 @@
 <div nz-row [nzGutter]="24">
-    <div nz-col [nzSpan]="24">
-        <h2 nz-typography>Prerequisites</h2>
-<nz-divider></nz-divider>
-<div class="prerequisites-container">
-    <h3>System Requirements</h3>
-    <nz-timeline nzMode="alternate">
+  <div nz-col [nzSpan]="24">
+    <h2 nz-typography>Prerequisites</h2>
+    <nz-divider></nz-divider>
+    <div class="prerequisites-container">
+      <h3>System Requirements</h3>
+      <nz-timeline nzMode="alternate">
         <nz-timeline-item nzColor="green"><p nz-typography><strong>
-            Node.js (Latest LTS Version)</strong><br>
+              Node.js (Latest LTS Version)</strong><br>
             Required for running the backend server<br>
             Package management with npm</p>
-        </nz-timeline-item >
-        <nz-timeline-item  nzColor="blue" >
-        <strong>MongoDB</strong><br>
-        Database server must be installed and running<br>
-        Required for data persistence<br>
-        MongoDB Compass (optional) for database visualization<br>
+        </nz-timeline-item>
+        <nz-timeline-item nzColor="blue">
+          <strong>MongoDB</strong><br>
+          Database server must be installed and running<br>
+          Required for data persistence<br>
+          MongoDB Compass (optional) for database visualization<br>
         </nz-timeline-item>
         <nz-timeline-item nzColor="yellow">
-            <strong> Development Tools</strong><br>
-            Git for version control<br>
-            Code editor (VS Code recommended for ESLint/Prettier integration)<br>
+          <strong> Development Tools</strong><br>
+          Git for version control<br>
+          Code editor (VS Code recommended for ESLint/Prettier integration)<br>
         </nz-timeline-item>
-        <nz-timeline-item nzColor="red"> 
-           <strong> Environment Setup ( After Project Clone/Installation )</strong><br>
-           <u>.env</u> file with required environment variables<br>
-           Configuration files in config/ directory for both development and production
-           (Or use default configuration)<br>
-           Updating CORS Policy if required (default is all)
+        <nz-timeline-item nzColor="red">
+          <strong> Environment Setup ( After Project Clone/Installation
+            )</strong><br>
+          <u>.env</u> file with required environment variables<br>
+          Configuration files in config/ directory for both development and
+          production
+          (Or use default configuration)<br>
+          Updating CORS Policy if required (default is all)
         </nz-timeline-item>
         <nz-timeline-item nzColor="purple">
-            <strong>System Access</strong><br>
-            Verify Port availability (default Node.jsport) PORT 3000<br>
-            Verfiy Read/Write permissions for log files<br>
-            Log path could be configured in COMBINED_LOG_PATH enviroment variable<br>
-            or default application.log and error.log file would be created in project ROOT.<br>
-            Verify Network access for MongoDB connection for remote database
+          <strong>System Access</strong><br>
+          Verify Port availability (default Node.jsport) PORT 3000<br>
+          Verfiy Read/Write permissions for log files<br>
+          Log path could be configured in COMBINED_LOG_PATH enviroment
+          variable<br>
+          or default application.log and error.log file would be created in
+          project ROOT.<br>
+          Verify Network access for MongoDB connection for remote database
         </nz-timeline-item>
       </nz-timeline>
-</div>
-</div>
+    </div>
+  </div>
 </div>
 <nz-divider></nz-divider>
 <div nz-row [nzGutter]="24">
-    <h2 nz-typography>Environment Variables</h2>
-    <div nz-col [nzSpan]="24" [align]="'center'">
-        <nz-divider></nz-divider>
-        <nz-table nzTemplateMode  nzSize="middle" nzBordered style="width: 600px;">
-            <thead>
-              <tr nz-typography>
-                <th style="width: 120px;">Variable</th>
-                <th style="width: 180px;">Values(Only for Demo)</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>NODE_ENV</td>
-                <td>development</td>
-                <td>Node Enviroment either <strong>(production/development)</strong></td>
-              </tr>
-              <tr>
-                <td>APPLICATION_PORT</td>
-                <td>3000</td>
-                <td>Server port number</td>
-              </tr>
-              <tr>
-                <td>MONGODB_CONNECTION_URL</td>
-                <td>mongodb://localhost:27017</td>
-                <td>MongoDB connection url for both enviroment</td>
-              </tr>
-              <tr>
-                <td>ACCESS_TOKEN_SECRET</td>
-                <td>4bT6wGq95Hr44423d43xe</td>
-                <td>Random String as a Secret key for JWT Access token generation</td>
-              </tr>
-              <tr>
-                <td>ACCESS_TOKEN_EXPIRY</td>
-                <td>5m</td>
-                <td>Access Token expiration time.<a href="https://github.com/auth0/node-jsonwebtoken#readme">See More..</a></td>
-              </tr>
-              <tr>
-                <td>REFRESH_TOKEN_SECRET</td>
-                <td>Hr44423d43xe</td>
-                <td>Random String as a Secret key for JWT Access token generation</td>
-              </tr>
-              <tr>
-                <td>REFRESH_TOKEN_EXPIRY</td>
-                <td>1h</td>
-                <td>Refresh Token expiration time.<a href="https://github.com/auth0/node-jsonwebtoken#readme">See More..</a></td>
-              </tr>
-              <tr>
-                <td>COMBINED_LOG_PATH</td>
-                <td>/var/log/combined.log</td>
-                <td>A valid file path to stream the combined logs of application in <strong>production</strong>, 
-               by default combined.log file will be created in project root folder for logs, if path not setted</td>
-              </tr>
-            </tbody>
-          </nz-table>
-</div>
+  <h2 nz-typography>Environment Variables</h2>
+  <div nz-col [nzSpan]="24" [align]="'center'">
+    <nz-divider></nz-divider>
+    <nz-table nzTemplateMode nzSize="middle" nzBordered style="width: 600px;">
+      <thead>
+        <tr nz-typography>
+          <th style="width: 120px;">Variable</th>
+          <th style="width: 180px;">Values(Only for Demo)</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>NODE_ENV</td>
+          <td>development</td>
+          <td>Node Enviroment either
+            <strong>(production/development)</strong></td>
+        </tr>
+        <tr>
+          <td>APPLICATION_PORT</td>
+          <td>3000</td>
+          <td>Server port number</td>
+        </tr>
+        <tr>
+          <td>MONGODB_CONNECTION_URL</td>
+          <td>mongodb://localhost:27017</td>
+          <td>MongoDB connection url for both enviroment</td>
+        </tr>
+        <tr>
+          <td>ACCESS_TOKEN_SECRET</td>
+          <td>4bT6wGq95Hr44423d43xe</td>
+          <td>Random String as a Secret key for JWT Access token generation</td>
+        </tr>
+        <tr>
+          <td>ACCESS_TOKEN_EXPIRY</td>
+          <td>5m</td>
+          <td>Access Token expiration time.<a
+              href="https://github.com/auth0/node-jsonwebtoken#readme">See
+              More..</a></td>
+        </tr>
+        <tr>
+          <td>REFRESH_TOKEN_SECRET</td>
+          <td>Hr44423d43xe</td>
+          <td>Random String as a Secret key for JWT Access token generation</td>
+        </tr>
+        <tr>
+          <td>REFRESH_TOKEN_EXPIRY</td>
+          <td>1h</td>
+          <td>Refresh Token expiration time.<a
+              href="https://github.com/auth0/node-jsonwebtoken#readme">See
+              More..</a></td>
+        </tr>
+        <tr>
+          <td>COMBINED_LOG_PATH</td>
+          <td>/var/log/combined.log</td>
+          <td>A valid file path to stream the combined logs of application in
+            <strong>production</strong>,
+            by default combined.log file will be created in project root folder
+            for logs, if path not setted</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
 </div>
 <nz-divider></nz-divider>
 <h2 nz-typography>Installation</h2>
 <div nz-row [nzGutter]="2" [nzJustify]="'center'" [nzAlign]="'middle'">
   <div nz-col [nzSpan]="24" [align]="'center'">
-      <nz-divider></nz-divider>
-      <nz-steps [nzCurrent]="current" nzDirection="vertical">
-        <nz-step nzTitle=" Clone the Repository" [nzDescription]="mytemplet1">
-          <ng-template #mytemplet1>
-            <nz-card  style="background-color: rgb(0, 8, 15); color: white;">
-              <p nz-typography style="color: inherit;">
-                #Clone the Repository<br>
-                <code>git clone git&#64;github.com:AnkitBorude/abacus-exam-backend.git</code><br>
-                
-                # Navigate to project directory<br>
-            
-                <code>cd abacus-exam-backend</code></p>
-              <div *ngIf="current!=0;else nextbuttonTemplet"></div>
+    <nz-divider></nz-divider>
+    <nz-steps [nzCurrent]="current" nzDirection="vertical">
+      <nz-step nzTitle=" Clone the Repository" [nzDescription]="mytemplet1">
+        <ng-template #mytemplet1>
+          <nz-card style="background-color: rgb(0, 8, 15); color: white;">
+            <p nz-typography style="color: inherit;">
+              #Clone the Repository<br>
+              <code>git clone
+                git&#64;github.com:AnkitBorude/abacus-exam-backend.git</code><br>
+
+              # Navigate to project directory<br>
+
+              <code>cd abacus-exam-backend</code></p>
+            <div *ngIf="current!=0;else nextbuttonTemplet"></div>
+          </nz-card>
+        </ng-template>
+      </nz-step>
+      <nz-step nzTitle="Install Dependencies" [nzDescription]="mytemplet2">
+        <ng-template #mytemplet2>
+          <nz-card style="background-color: rgb(0, 8, 15); color: white;">
+            <p nz-typography style="color: inherit;">
+              #Install Dependencies<br>
+              <code>npm install</code><br>
+              <div *ngIf="current!=1;else nextbuttonTemplet"></div>
             </nz-card>
-            </ng-template>
+          </ng-template>
         </nz-step>
-        <nz-step nzTitle="Install Dependencies" [nzDescription]="mytemplet2">
-          <ng-template #mytemplet2>
-            <nz-card  style="background-color: rgb(0, 8, 15); color: white;">
-              <p nz-typography style="color: inherit;">
-                #Install Dependencies<br>
-                <code>npm install</code><br>
-                <div *ngIf="current!=1;else nextbuttonTemplet"></div>
-            </nz-card>
-            </ng-template>
-        </nz-step>
-        <nz-step nzTitle="Environment Configuration" [nzDescription]="mytemplet3">
+        <nz-step nzTitle="Environment Configuration"
+          [nzDescription]="mytemplet3">
           <ng-template #mytemplet3>
-            <nz-card  style="background-color: rgb(0, 8, 15); color: white;">
+            <nz-card style="background-color: rgb(0, 8, 15); color: white;">
               <p nz-typography style="color: inherit;">
                 ##Create .env file<br>
                 <code>touch .env</code><br>
-                Add environment variables and their respective values to the .env file,
+                Add environment variables and their respective values to the
+                .env file,
                 using the table from the previous section as a reference.
-                Configure the variables according to the development or production environment.
+                Configure the variables according to the development or
+                production environment.
                 ex.<br>
                 NODE_ENV=development<br>
                 PORT=3000<br>
@@ -146,11 +161,12 @@
               </p>
               <div *ngIf="current!=2;else nextbuttonTemplet"></div>
             </nz-card>
-            </ng-template>
+          </ng-template>
         </nz-step>
-        <nz-step nzTitle="Database Setup For Local Development" [nzDescription]="mytemplet4">
+        <nz-step nzTitle="Database Setup For Local Development"
+          [nzDescription]="mytemplet4">
           <ng-template #mytemplet4>
-            <nz-card  style="background-color: rgb(0, 8, 15); color: white;">
+            <nz-card style="background-color: rgb(0, 8, 15); color: white;">
               <p nz-typography style="color: inherit;">
                 # Start MongoDB locally<br>
                 <code>mongod</code><br><br>
@@ -160,13 +176,15 @@
               </p>
               <div *ngIf="current!=3;else nextbuttonTemplet"></div>
             </nz-card>
-            </ng-template>
+          </ng-template>
         </nz-step>
-        <nz-step nzTitle="Start Development/Production Server" [nzDescription]="mytemplet5">
+        <nz-step nzTitle="Start Development/Production Server"
+          [nzDescription]="mytemplet5">
           <ng-template #mytemplet5>
-            <nz-card  style="background-color: rgb(0, 8, 15); color: white;">
+            <nz-card style="background-color: rgb(0, 8, 15); color: white;">
               <p nz-typography style="color: inherit;">
-                # # Start server with nodemon (auto-reload) local developement<br>
+                # # Start server with nodemon (auto-reload) local
+                developement<br>
                 <code>npm run dev</code><br><br>
 
                 # # Start server on poduction server<br>
@@ -177,25 +195,109 @@
               </p>
               <div *ngIf="current!=4;else nextbuttonTemplet"></div>
             </nz-card>
-            </ng-template>
+          </ng-template>
+        </nz-step>
+        <nz-step nzTitle="Verify Installation" [nzDescription]="mytemplet6">
+          <ng-template #mytemplet6>
+            <nz-card style="background-color: rgb(0, 8, 15); color: white;">
+              <p nz-typography style="color: inherit;">
+                1. Open browser or Postman<br>
+                2. Access your server's domain/IP with configured port of
+                production Server<br>
+                3. or Access <code>http://localhost:3000</code> on local
+                developement<br>
+                4. You should see the API welcome message<br>
+                5. Check Logs for any error<br>
+                6. In Local developement enviroment <code>error.log</code> and
+                <code>application.log</code>
+                files are maintained at Root level of project.as well as
+                streamed to console<br>
+                7. In Production enviroment combined application and error logs
+                are streamed to <code>
+                  COMBINED_LOG_PATH
+                </code>
+              </p>
+              <div *ngIf="current!=5;else nextbuttonTemplet"></div>
+            </nz-card>
+          </ng-template>
         </nz-step>
       </nz-steps>
+    </div>
+    <ng-template #nextbuttonTemplet>
+      <button
+        nz-button
+        nzType="default"
+        (click)="pre()"
+        *ngIf="current > 0">
+        <span>Previous</span>
+      </button>
+      <button style="margin-left: 1rem;"
+        nz-button
+        nzType="primary"
+        (click)="next()"
+        *ngIf="current < 10">
+        <span>Next</span>
+      </button>
+    </ng-template>
   </div>
-  <ng-template #nextbuttonTemplet>
-    <button 
-      nz-button 
-      nzType="default"
-      (click)="pre()" 
-        *ngIf="current > 0" >
-      <span>Previous</span>
-    </button>
-    <button style="margin-left: 1rem;"
-      nz-button 
-      nzType="primary"
-      (click)="next()" 
-        *ngIf="current < 10"
-     >
-      <span>Next</span>
-    </button>
-  </ng-template>
-</div>
+  <nz-divider></nz-divider>
+  <h2 nz-typography>Available Scripts</h2>
+  <div nz-row [nzGutter]="2" [nzJustify]="'center'" [nzAlign]="'middle'">
+    <div nz-col [nzSpan]="24">
+      <nz-card
+        style="background-color: rgba(0, 23, 43, 0.925); color: white; width: 600px;">
+        <p nz-typography style="color: inherit;">
+          <code>npm run dev</code> # Start development server<br>
+          <code>npm run start</code> # Start production server<br>
+          <code>npm run lint</code> # Run ESLint checks<br>
+          <code> npm run lint:fix</code> # Fix ESLint issues<br>
+          <code>npm run format:check </code># Check Prettier formatting<br>
+          <code> npm run format:fix </code> # Fix Prettier formatting<br>
+          <code>npm run db:dump </code> # Backup database only for Localhost
+          MongoDB<br>
+          <code>npm run db:restore </code> # Restore database only for Localhost
+          MongoDB<br>
+        </p>
+      </nz-card>
+    </div>
+  </div>
+  <nz-divider></nz-divider>
+  <h2 nz-typography>Troubleshooting</h2>
+  <div nz-row [nzGutter]="2" [nzJustify]="'center'" [nzAlign]="'middle'">
+    <div nz-col [nzSpan]="24">
+      <h3>Common Issues:</h3>
+          <ul nz-typography>
+            <li><strong>MongoDB Connection Failed</strong>
+              <ul>
+                <li>Verify MongoDB is running</li>
+                <li>Check connection string in <code>.env</code></li>
+                <li>Ensure network connectivity</li>
+              </ul>
+            </li>
+
+            <li><strong>Port Already in Use</strong>
+              <ul>
+                <li>Change PORT in .env</li>
+                <li>Kill process using the port</li>
+              </ul>
+            </li>
+
+            <li><strong>Permission Issues</strong>
+
+              <ul>
+                <li>Check file permissions</li>
+                <li>Run with appropriate user rights</li>
+              </ul>
+            </li>
+
+            <li><strong>Getting Help</strong>
+
+              <ul>
+                <li>Check the error logs in logger directory</li>
+                <li>Refer to project documentation</li>
+                <li>Open an issue on GitHub repository</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
