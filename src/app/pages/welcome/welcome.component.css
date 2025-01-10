@@ -41,18 +41,27 @@
   .profile-info h1 {
     color: white;
     margin: 0.5rem 0.5rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    transition: text-shadow 0.3s ease, color 0.3s ease; 
+  }
+  .profile-info h1:hover{
+    text-shadow: 0 0 10px #fff; 
   }
 
   .profile-info h2 {
     color: white;
     margin: 0.5rem 0.5rem;
     font-size: 1.5rem;
+    
+  }
+  .profile-info p:hover{
+    text-shadow: 0 0 10px #fff; 
   }
   .profile-info p {
     color: rgba(255, 255, 255, 0.85);
     font-size: 1.25rem;
     margin: 1rem 1rem;
+    transition: text-shadow 0.3s ease, color 0.3s ease; 
   }
  h2{
   margin: 0.5rem 0.5rem;
@@ -131,4 +140,11 @@ nz-card{
     .quick-links {
       justify-content: flex-start;
     }
+  }
+  nz-statistics{
+    font-size: 2rem;
+
+  }
+  .myrow *{
+    color: white !important;
   }

@@ -3,8 +3,8 @@
     <!-- Profile Section -->
     <div class="profile-section">
       <div class="profile-info">
-        <h1 nz-typography style="margin-bottom: 0;">Abacus Exam Application</h1>
-        <p nz-typography nzType="secondary">Built by Ankit Borude</p>
+        <h1 nz-typography style="margin-bottom: 0;">Abacus Exam System REST API</h1>
+        <p nz-typography nzType="secondary">Made with <span nz-icon nzType="heart" nzTheme="fill" style="color: #eb2f96;"></span> By Ankit Borude</p>
       </div>
     </div>
     <nz-divider></nz-divider>
@@ -23,30 +23,29 @@
       <nz-carousel style="max-width: 800px; height: 300px;"
         [nzAutoPlay]="'true'" [nzAutoPlaySpeed]="5000">
         <div nz-carousel-content>
-          <div nz-row [nzGutter]="16" style="text-align: center;"
-            class="stats-section">
-            <div nz-col [nzXs]="12" [nzMd]="6">
+          <div nz-row [nzGutter]="16" [nzAlign]="'middle'" style="height: 100%" [nzJustify]="'center'" class="stats-section">
+            <div nz-col [nzSpan]="6">
               <nz-statistic [nzValue]="15" [nzSuffix]="'+'"
-                [nzTitle]="'API Endpoints'"></nz-statistic>
+                [nzTitle]="'API Endpoints'" [nzValueStyle]="{ 'font-size': '2rem','font-weight':'800' }"></nz-statistic>
             </div>
-            <div nz-col [nzXs]="12" [nzMd]="6">
+            <div nz-col [nzSpan]="6">
               <nz-statistic [nzValue]="95" [nzSuffix]="'%'"
-                [nzTitle]="'Test Coverage'"></nz-statistic>
+                [nzTitle]="'Test Coverage'" [nzValueStyle]="{ 'font-size': '2rem','font-weight':'800' }"></nz-statistic>
             </div>
-            <div nz-col [nzXs]="12" [nzMd]="6">
+            <div nz-col [nzSpan]="6">
               <nz-statistic [nzValue]="50" [nzSuffix]="'+'"
-                [nzTitle]="'Test Cases'"></nz-statistic>
+                [nzTitle]="'Test Cases'" [nzValueStyle]="{ 'font-size': '2rem','font-weight':'800' }"></nz-statistic>
             </div>
-            <div nz-col [nzXs]="12" [nzMd]="6">
+            <div nz-col [nzSpan]="6">
               <nz-statistic [nzValue]="2.0" [nzPrefix]="'v'"
-                [nzTitle]="'Latest Version'"></nz-statistic>
+                [nzTitle]="'Latest Version'" [nzValueStyle]="{ 'font-size': '2rem','font-weight':'800' }"></nz-statistic>
             </div>
           </div>
         </div>
         <div nz-carousel-content>
           <h2 nz-typography style="color: #fff;">Technologies Used</h2>
           <div nz-row nzJustify="space-evenly"
-            style="height: 80px; color: #fff; margin: 0">
+            style="height: 80px; color: #fff; margin-top: 2rem">
             <div nz-col nzSpan="4">
               <img height="80px" width="112px"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg" />
@@ -86,7 +85,7 @@
         </div>
         <div nz-carousel-content>
           <h2 nz-typography style="color: #fff;">Developement Tools</h2>
-          <div nz-row nzJustify="space-evenly" style="color: #fff; margin: 0">
+          <div nz-row nzJustify="space-evenly" style="color: #fff; margin-top:2rem">
             <div nz-col nzSpan="4">
               <img height="80px" width="112px"
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
@@ -122,8 +121,8 @@
         </div>
         <div nz-carousel-content>
           <h2 nz-typography style="color: #fff;">Key Features</h2>
-          <div nz-row nzJustify="space-evenly"
-            style="color: #fff; margin-top: 1rem;">
+          <div nz-row nzJustify="space-evenly" class="myrow"
+            style=" margin-top: 2rem;">
             <div nz-col nzSpan="4">
               <h3 nz-typography>Authorization</h3>
               <p nz-typography>Implemented Authorization and RBAC using JWT
@@ -262,13 +261,16 @@
     </nz-card>
     <!-- Quick Links -->
     <div class="quick-links">
+      <a href="/architecture/core">
       <button nz-button nzType="primary" nzShape="round">
         <span nz-icon nzType="book"></span>
         Quick Start
-      </button>
+      </button></a>
+      <a href="https://github.com/AnkitBorude/Abacus-Exam-System-REST-API">
       <button nz-button nzType="primary" nzShape="round">
         <span nz-icon nzType="github"></span>
         View on GitHub
       </button>
+      </a>
     </div>
   </div>

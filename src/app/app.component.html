@@ -20,19 +20,13 @@
       <div nz-row [nzGutter]="1" [nzJustify]="'center'" [nzAlign]="'middle'">
         <div nz-col [nzSpan]="24" style="text-align: center;" >
           <img height="32px" width="28px" src="https://ng.ant.design/assets/img/logo.svg">
-          <p nz-typography>Built Using <br>Angular Ant Design<br> <a href="https://ng.ant.design/docs/introduce/en">NZ-ZORRO</a></p>
-          <span nz-typography nzType="success" style="font-weight: 800;">
+          <p nz-typography style="white-space: nowrap; overflow: hidden; text-overflow:clip">Built Using <br>Angular Ant Design<br> <a href="https://ng.ant.design/docs/introduce/en">NZ-ZORRO</a></p>
+          <span nz-typography nzType="success" style="font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow:clip">
             <span nz-icon nzType="copyright"></span>
             Ankit Borude v1.2
           </span>
         </div>
       </div>
-      <!-- <div style="padding: 5px; display: flex; justify-content: center;align-items: center; white-space: nowrap;">
-        <span nz-typography nzType="success" style="display: flex; align-items: center; justify-items: bottom; font-weight: 800;">
-          <span nz-icon nzType="copyright"></span>
-          Ankit Borude v1.2
-        </span>
-      </div> -->
     </nz-card>
     <ul nz-menu [nzTheme]="'light'" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-submenu nzOpen nzTitle="Getting Started">
@@ -185,10 +179,9 @@
           </div>    
           <div style="flex: 1;">
             <div nz-flex nzVertical="false" nzJustify="end" nzAlign="center">
-                <span class="header-items" nz-icon nzType="heart" nzTheme="fill" id="give-love"></span>
-              
-             
-                   
+              <a href="https://github.com/AnkitBorude/Abacus-Exam-System-REST-API">
+                <span nz-popover nzPopoverTitle="Support" [nzPopoverContent]="contentTemplate" nzPopoverPlacement="bottom" class="header-items" nz-icon nzType="heart" nzTheme="fill" id="give-love"></span>
+                </a>
                   <a href="https://github.com/AnkitBorude">
                     <span class="header-items"
                    nz-icon
@@ -221,4 +214,10 @@
     </nz-content>
   </nz-layout>
 </nz-layout>
-
+<ng-template #contentTemplate>
+  <div>
+    <p nz-typography style="font-weight: 800;">Click to support me by giving a Star &nbsp;<span nz-icon nzType="star" nzTheme="fill" style="color: #f7e604;;"></span>
+      <br>to repo on GitHub and following me.
+    </p>
+  </div>
+</ng-template>
