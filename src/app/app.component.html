@@ -6,6 +6,14 @@
     [(nzCollapsed)]="isCollapsed"
     [nzTrigger]="null"
     [nzTheme]="theme ? 'dark' : 'light'">
+    <nz-card>
+      <div style="padding: 5px; display: flex; justify-content: center;align-items: center; white-space: nowrap;">
+        <span nz-typography nzType="success" style="display: flex; align-items: center; justify-items: bottom; font-weight: 800;">
+          <span nz-icon nzType="copyright"></span>
+          Ankit Borude v1.2
+        </span>
+      </div>
+    </nz-card>
     <ul nz-menu [nzTheme]="'light'" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-submenu nzOpen nzTitle="Getting Started">
         <ul>
@@ -153,13 +161,8 @@
                     </span>
           </div>
           <div>
-            <h4 nz-typography style="padding: 20px;"><strong>API Documentation</strong></h4>
-          </div>
-          <div style="padding: 5px;">
-            <span nz-typography nzType="secondary">
-              <span nz-icon nzType="copyright" ></span>
-              Ankit Borude v1.0.2</span>
-          </div>
+            <h4 nz-typography style="padding: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><strong>API Documentation</strong></h4>
+          </div>    
           <div style="flex: 1;">
             <div nz-flex nzVertical="false" nzJustify="end" nzAlign="center">
                 <span class="header-items" nz-icon nzType="heart" nzTheme="fill" id="give-love"></span>
@@ -192,3 +195,13 @@
     </nz-content>
   </nz-layout>
 </nz-layout>
+<div nz-row [nzGutter]="10" [nzJustify]="'center'" class="overlay" *ngIf="getScreenWidth<780">
+  <div nz-col [nzSpan]="24" style="padding: 2rem; text-align: center;" >
+ <nz-card style="width: 100%;">
+  <h1 style="font-size: calc(1vw + 1rem);" nz-typography><span nz-icon nzType="desktop"></span>&nbsp;Desktop Mode Required</h1>
+  <p nz-typography>please access this website on a desktop device or<br>
+     enable "Desktop Mode" on your mobile browser.<br>
+     Made with <span nz-icon nzType="heart" nzTheme="fill" style="color: #eb2f96;;"></span> By <strong>Ankit Borude</strong></p>
+ </nz-card>
+</div>
+</div>

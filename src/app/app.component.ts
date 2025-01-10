@@ -8,9 +8,25 @@ import { ApiEndpointService } from './services/apiendpoints.service';
 })
 export class AppComponent {
 
+
+  public getScreenWidth: any;
+  public getScreenHeight: any;
+
+  ngOnInit() {
+    this.getScreenWidth = window.innerWidth;
+    this.getScreenHeight = window.innerHeight;
+}
+
   constructor(public apiEndpointsservice:ApiEndpointService){
     
   }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    this.getScreenWidth = window.innerWidth;
+    this.getScreenHeight = window.innerHeight;
+  }
+  
   isCollapsed = false;
   theme:Boolean=true;
   scrollPercentage:number=0;
