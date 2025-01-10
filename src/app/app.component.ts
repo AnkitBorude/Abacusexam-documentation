@@ -1,5 +1,7 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { ApiEndpointService } from './services/apiendpoints.service';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,14 +14,14 @@ export class AppComponent {
   public getScreenWidth: any;
   public getScreenHeight: any;
 
+  constructor(public apiEndpointsservice:ApiEndpointService){
+
+  }
   ngOnInit() {
     this.getScreenWidth = window.innerWidth;
     this.getScreenHeight = window.innerHeight;
-}
-
-  constructor(public apiEndpointsservice:ApiEndpointService){
-    
   }
+
 
   @HostListener('window:resize', ['$event'])
   onWindowResize() {

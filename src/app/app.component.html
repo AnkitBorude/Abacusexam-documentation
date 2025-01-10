@@ -41,9 +41,6 @@
             <a routerLink="welcome" >Introduction</a>
           </li>
           <li nz-menu-item nzMatchRouterExact>
-            <a routerLink="welcome" fragment="purpose">Purpose of the API</a>
-          </li>
-          <li nz-menu-item nzMatchRouterExact>
             <a routerLink="key-feature">Key Features</a>
           </li>
         </ul>
@@ -61,9 +58,9 @@
       <li nz-submenu nzTitle="Installation">
         <ul>
           <li nz-menu-item  nzMatchRouterExact>
-            <a routerLink="installation">Prerequisites</a>
+            <a routerLink="installation" fragment="prerequisites">Prerequisites</a>
           </li>
-          <li nz-menu-item nzMatchRouter>
+          <li nz-menu-item nzMatchRouterExact>
             <a routerLink="installation" fragment="enviroment">Environment Variables</a>
           </li>
           <li nz-menu-item nzMatchRouterExact>

@@ -2,7 +2,7 @@
   <div nz-col [nzSpan]="24" style="height: 100%;">
     <h2 nz-typography>Prerequisites</h2>
     <nz-divider></nz-divider>
-    <div class="prerequisites-container">
+    <div class="prerequisites-container" id="prerequisites">
       <h3>System Requirements</h3>
       <nz-timeline nzMode="alternate">
         <nz-timeline-item nzColor="green"><p nz-typography><strong>
@@ -45,7 +45,7 @@
   </div>
 </div>
 <nz-divider></nz-divider>
-<div nz-row [nzGutter]="24">
+<div nz-row [nzGutter]="24" id="enviroment">
   <h2 nz-typography>Environment Variables</h2>
   <div nz-col [nzSpan]="24" [align]="'center'">
     <nz-divider></nz-divider>
@@ -112,7 +112,7 @@
 </div>
 <nz-divider></nz-divider>
 <h2 nz-typography>Installation</h2>
-<div nz-row [nzGutter]="2" [nzJustify]="'center'" [nzAlign]="'middle'">
+<div nz-row [nzGutter]="2" [nzJustify]="'center'" [nzAlign]="'middle'" id="installation-guide">
   <div nz-col [nzSpan]="24" [align]="'center'">
     <nz-divider></nz-divider>
     <nz-steps [nzCurrent]="current" nzDirection="vertical">
