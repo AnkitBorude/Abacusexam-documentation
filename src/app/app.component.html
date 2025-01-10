@@ -1,3 +1,13 @@
+<div nz-row [nzGutter]="10" [nzJustify]="'center'" class="overlay" *ngIf="getScreenWidth<780">
+  <div nz-col [nzSpan]="24" style="padding: 2rem; text-align: center;" >
+ <nz-card style="width: 100%;">
+  <h1 style="font-size: calc(1vw + 1rem);" nz-typography><span nz-icon nzType="desktop"></span>&nbsp;Desktop Mode Required</h1>
+  <p nz-typography>please access this website on a desktop device or<br>
+     enable "Desktop Mode" on your mobile browser.<br>
+     Made with <span nz-icon nzType="heart" nzTheme="fill" style="color: #eb2f96;;"></span> By <strong>Ankit Borude</strong></p>
+ </nz-card>
+</div>
+</div>
 <nz-layout class="app-layout" >
   <nz-sider class="menu-sidebar"
     nzCollapsible
@@ -7,47 +17,57 @@
     [nzTrigger]="null"
     [nzTheme]="theme ? 'dark' : 'light'">
     <nz-card>
-      <div style="padding: 5px; display: flex; justify-content: center;align-items: center; white-space: nowrap;">
+      <div nz-row [nzGutter]="1" [nzJustify]="'center'" [nzAlign]="'middle'">
+        <div nz-col [nzSpan]="24" style="text-align: center;" >
+          <img height="32px" width="28px" src="https://ng.ant.design/assets/img/logo.svg">
+          <p nz-typography>Built Using <br>Angular Ant Design<br> <a href="https://ng.ant.design/docs/introduce/en">NZ-ZORRO</a></p>
+          <span nz-typography nzType="success" style="font-weight: 800;">
+            <span nz-icon nzType="copyright"></span>
+            Ankit Borude v1.2
+          </span>
+        </div>
+      </div>
+      <!-- <div style="padding: 5px; display: flex; justify-content: center;align-items: center; white-space: nowrap;">
         <span nz-typography nzType="success" style="display: flex; align-items: center; justify-items: bottom; font-weight: 800;">
           <span nz-icon nzType="copyright"></span>
           Ankit Borude v1.2
         </span>
-      </div>
+      </div> -->
     </nz-card>
     <ul nz-menu [nzTheme]="'light'" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-submenu nzOpen nzTitle="Getting Started">
         <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="introduction">Introduction</a>
+          <li nz-menu-item nzMatchRouterExact>
+            <a routerLink="welcome" >Introduction</a>
           </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Purpose of the API</a>
+          <li nz-menu-item nzMatchRouterExact>
+            <a routerLink="welcome" fragment="purpose">Purpose of the API</a>
           </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Key Features</a>
+          <li nz-menu-item nzMatchRouterExact>
+            <a routerLink="key-feature">Key Features</a>
           </li>
         </ul>
       </li>
       <li nz-submenu nzTitle="System Architecture">
         <ul>
-          <li nz-menu-item nzMatchRouter>
+          <li nz-menu-item  nzMatchRouterExact>
             <a routerLink="architecture/core">Core Components</a>
           </li>
-          <li nz-menu-item nzMatchRouter>
+          <li nz-menu-item  nzMatchRouterExact>
             <a routerLink="architecture/project-structure">Project Structure</a>
           </li>
         </ul>
       </li>
       <li nz-submenu nzTitle="Installation">
         <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>Prerequisites</a>
+          <li nz-menu-item  nzMatchRouterExact>
+            <a routerLink="installation">Prerequisites</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a>Installation Guide</a>
+            <a routerLink="installation" fragment="enviroment">Environment Variables</a>
           </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Environment Configuration</a>
+          <li nz-menu-item nzMatchRouterExact>
+            <a routerLink="installation" fragment="installation-guide">Installation Guide</a>
           </li>
         </ul>
       </li>
@@ -146,6 +166,9 @@
               <li nz-submenu nzTitle="Result"></li>
         </ul>
       </li>
+      <li nz-menu-item nzMatchRouter><a routerLink="models">Models</a></li>
+      <li nz-menu-item nzMatchRouter><a routerLink="testing">Testing</a></li>
+      <li nz-menu-item nzMatchRouter><a routerLink="about">About</a></li>
     </ul>
   </nz-sider>
   <nz-layout [ngClass]="{ 'collapsed': isCollapsed }" class="main-layout" >
@@ -168,19 +191,25 @@
                 <span class="header-items" nz-icon nzType="heart" nzTheme="fill" id="give-love"></span>
               
              
-                   <span class="header-items"
+                   
+                  <a href="https://github.com/AnkitBorude">
+                    <span class="header-items"
                    nz-icon
-                   [nzType]="'github'"></span>
-              
-            
+                   [nzType]="'github'">
+                  </span>
+                  </a>
+                  
+                  <a href="https://www.linkedin.com/in/ankit-borude/">
                 <span class="header-items"
                 nz-icon
                 [nzType]="'linkedin'"></span>
+                 </a>
            
-           
+                 <a href="mailto:ankitborude250@gmail.com">
             <span class="header-items"
             nz-icon
             [nzType]="'mail'"></span>
+            </a>
             </div>
           </div>
       </div>
@@ -195,13 +224,4 @@
     </nz-content>
   </nz-layout>
 </nz-layout>
-<div nz-row [nzGutter]="10" [nzJustify]="'center'" class="overlay" *ngIf="getScreenWidth<780">
-  <div nz-col [nzSpan]="24" style="padding: 2rem; text-align: center;" >
- <nz-card style="width: 100%;">
-  <h1 style="font-size: calc(1vw + 1rem);" nz-typography><span nz-icon nzType="desktop"></span>&nbsp;Desktop Mode Required</h1>
-  <p nz-typography>please access this website on a desktop device or<br>
-     enable "Desktop Mode" on your mobile browser.<br>
-     Made with <span nz-icon nzType="heart" nzTheme="fill" style="color: #eb2f96;;"></span> By <strong>Ankit Borude</strong></p>
- </nz-card>
-</div>
-</div>
+

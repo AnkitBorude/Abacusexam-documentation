@@ -16,7 +16,10 @@ const routes: Routes = [
   {path:'installation',component:ProjectInstallationComponent},
   {path:'key-feature',component:KeyFeaturesComponent},
   {path:'api/:index',component:EndpointinfoComponent},
-  {path:'coming-soon',component:ComingSoonComponent}
+  {path:'coming-soon',component:ComingSoonComponent},
+  {path:'models',redirectTo:'/coming-soon'},
+  {path:'testing',redirectTo:'/coming-soon'},
+  {path:'about',redirectTo:'/coming-soon'}
 ];
 
 @NgModule({
