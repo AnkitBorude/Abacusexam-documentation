@@ -8,6 +8,7 @@ import { ProjectInstallationComponent } from './project-installation/project-ins
 import { KeyFeaturesComponent } from './key-features/key-features.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/welcome' },
@@ -19,10 +20,11 @@ const routes: Routes = [
   {path:'api/:index',component:EndpointinfoComponent},
   {path:'coming-soon',component:ComingSoonComponent},
   {path:'not-found',component:NotFoundComponent},
-  {path:'**',redirectTo:'/not-found'},
+  {path:'authentication',component:AuthenticationComponent},
   {path:'models',redirectTo:'/coming-soon'},
   {path:'testing',redirectTo:'/coming-soon'},
-  {path:'about',redirectTo:'/coming-soon'}
+  {path:'about',redirectTo:'/coming-soon'},
+  {path:'**',redirectTo:'/not-found'}
 ];
 
 @NgModule({

@@ -1,0 +1,27 @@
+<nz-card nzTitle="Authentication">
+<p nz-typography style="font-size: 1rem;  text-align: justify;">
+    Authentication is a key component of our API, required for specific endpoints to ensure secure access and proper authorization. 
+    The system utilizes tokens, which must be included in the <code>Authorization </code>header in the format <code>Bearer&nbsp;&lt;token&gt;</code>. 
+    Separate tokens are issued for <code>admin</code> and <code>student </code>users, providing tailored access control based on the user's role.
+    To obtain a token, users need to log in via the endpoint <code>/api/v1/&lcub;student/admin&rcub;/login</code>, where <code>&lcub;student/admin&rcub;</code> corresponds 
+    to the type of user.<br>
+    Upon successful login, the response includes a<code> token</code> field containing the authentication token and a <code>refreshToken</code>. 
+    The authentication token is essential for accessing protected endpoints, while the <code>refreshToken </code>is used to renew the token when it expires.<br><br>
+    <code>Authorization&nbsp;</code><code>Bearer&nbsp;&lt;token&gt;</code><br><br>
+    The tokens issued are short-lived for enhanced security. When a token becomes invalid, it can be regenerated using the <code>/api/v1/&lcub;student/admin&rcub;/token </code>
+    endpoint by providing the refresh token. This ensures uninterrupted access without requiring users to log in repeatedly.<br>
+
+    Furthermore, some API responses and functionalities depend on the type of token provided. This mechanism enforces access control, 
+    ensuring that admin tokens grant higher privileges, while student tokens are limited to specific operations. This role-based authentication 
+    ensures that each user type interacts with the API in a controlled and secure manner.<br><br>
+    <nz-divider></nz-divider>
+API Reference Links
+</p>
+<nz-list  nzBordered ="small">
+    <nz-list-item>Student Login<a href="/api/0">See here..</a></nz-list-item>
+    <nz-list-item>Student Token Regeneration<a href="/api/2">See here..</a></nz-list-item>
+    <nz-list-item>Admin Login<a href="/api/13">See here..</a></nz-list-item>
+    <nz-list-item>Admin Token Regeneration<a href="/api/15">See here..</a></nz-list-item>
+</nz-list>
+</nz-card>
+Ankit Borude

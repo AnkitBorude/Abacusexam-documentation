@@ -45,6 +45,7 @@ import { KeyFeaturesComponent } from './key-features/key-features.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 registerLocaleData(en);
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ registerLocaleData(en);
     ProjectInstallationComponent,
     KeyFeaturesComponent,
     ComingSoonComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
