@@ -6,4 +6,5 @@ https://github.com/AnkitBorude/Abacus-Exam-System-REST-API
 <li>An Single page Web Application built using the Angular</li>
 <li>Contains project information and API Documentation for Abacus exam system <a href="https://github.com/AnkitBorude/Abacus-Exam-System-REST-API">Project Repo</li>
 <li>Web App made using NZ-ZORRO Ant Design</li>
+<li>Deployed on github pages at</li>
 <ul>
