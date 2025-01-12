@@ -32,11 +32,25 @@ export class AppComponent {
   isCollapsed = false;
   theme:Boolean=true;
   scrollPercentage:number=0;
+  siderWidth=300;
   onScroll(scrollableDiv: HTMLElement): void {
     const scrollTop = scrollableDiv.scrollTop;
     const scrollHeight = scrollableDiv.scrollHeight;
     const clientHeight = scrollableDiv.clientHeight;
 
     this.scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+  }
+  collapseMenu()
+  {
+    if(this.isCollapsed)
+    {
+      this.siderWidth=300;
+      this.isCollapsed=false;
+    }
+    else
+    {
+      this.siderWidth=80;
+      this.isCollapsed=true;
+    }
   }
 }

@@ -46,6 +46,7 @@ import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { NzResizableModule} from 'ng-zorro-antd/resizable';
 registerLocaleData(en);
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ registerLocaleData(en);
     NzTimelineModule,
     NzStepsModule,
     NzAffixModule,
-    NzPopoverModule
+    NzPopoverModule,
+    NzResizableModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

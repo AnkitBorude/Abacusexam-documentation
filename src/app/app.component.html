@@ -14,21 +14,21 @@
 <nz-layout class="app-layout">
   <nz-sider class="menu-sidebar"
     nzCollapsible
-    nzWidth="300px"
-    nzBreakpoint="md"
     [(nzCollapsed)]="isCollapsed"
     [nzTrigger]="null"
-    [nzTheme]="theme ? 'dark' : 'light'">
-    <nz-card>
-      <div nz-row [nzGutter]="1" [nzJustify]="'center'" [nzAlign]="'middle'">
-        <div nz-col [nzSpan]="24" style="text-align: center;">
+    [nzTheme]="'light'"
+    [nzWidth]="siderWidth"
+    >
+    <nz-card nzBordered="false" style="background-color: #d5d9df;">
+      <div nz-row [nzGutter]="1" [nzJustify]="'center'"  [nzAlign]="'middle'">
+        <div nz-col [nzSpan]="24" style="text-align: center; ">
           <img height="32px" width="28px"
             src="https://ng.ant.design/assets/img/logo.svg">
           <p nz-typography
             style="white-space: nowrap; overflow: hidden; text-overflow:clip">Built
-            Using <br>Angular Ant Design<br> <a
-              href="https://ng.ant.design/docs/introduce/en">NZ-ZORRO</a></p>
-          <span nz-typography nzType="success"
+            Using Angular <a
+              href="https://ng.ant.design/docs/introduce/en">NG-ZORRO</a></p>
+          <span nz-typography
             style="font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow:clip">
             <span nz-icon nzType="copyright"></span>
             Ankit Borude v1.2
@@ -37,7 +37,7 @@
       </div>
     </nz-card>
     <ul nz-menu [nzTheme]="'light'" nzMode="inline"
-      [nzInlineCollapsed]="isCollapsed">
+      [nzInlineCollapsed]="isCollapsed" style="height: 100%;">
       <li nz-submenu nzOpen nzTitle="Getting Started">
         <ul>
           <li nz-menu-item nzOpen nzMatchRouterExact>
@@ -425,11 +425,11 @@
       <li nz-menu-item nzMatchRouter><a routerLink="about">About</a></li>
     </ul>
   </nz-sider>
-  <nz-layout [ngClass]="{ 'collapsed': isCollapsed }" class="main-layout">
+  <nz-layout [ngClass]="{ 'collapsed': isCollapsed }" [style.margin-left.px]="siderWidth"  nz-resizable class="main-layout">
     <nz-header>
       <div nz-flex nzVertical='false' style="height: 50%;">
         <div>
-          <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+          <span class="header-trigger" (click)="collapseMenu()">
 
             <span class="trigger"
               nz-icon
