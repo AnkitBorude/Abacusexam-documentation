@@ -18,7 +18,7 @@
     nzBreakpoint="md"
     [(nzCollapsed)]="isCollapsed"
     [nzTrigger]="null"
-    [nzTheme]="theme ? 'dark' : 'light'">
+    [nzTheme]="'dark'">
     <nz-card>
       <div nz-row [nzGutter]="1" [nzJustify]="'center'" [nzAlign]="'middle'">
         <div nz-col [nzSpan]="24" style="text-align: center;">
@@ -36,8 +36,8 @@
         </div>
       </div>
     </nz-card>
-    <ul nz-menu [nzTheme]="'light'" nzMode="inline"
-      [nzInlineCollapsed]="isCollapsed">
+    <ul nz-menu [nzTheme]="'dark'" nzMode="inline"
+      [nzInlineCollapsed]="isCollapsed" style="height: 100%;">
       <li nz-submenu nzOpen nzTitle="Getting Started">
         <ul>
           <li nz-menu-item nzOpen nzMatchRouterExact>
