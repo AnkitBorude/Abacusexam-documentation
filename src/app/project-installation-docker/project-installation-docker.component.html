@@ -145,3 +145,142 @@
       </button>
     </ng-template>
   </div>
+<nz-divider></nz-divider>
+<h2 nz-typography>Production Deployment Using Docker</h2>
+<nz-divider></nz-divider>
+<h3 nz-typography>Description</h3>
+<div nz-row [nzGutter]="2">
+        <div nz-col [nzSpan]="24">
+          <nz-card nzTitle="Production Environment Features">
+            <nz-list nzBordered>
+              <nz-list-item>Secure MongoDB authentication with root user credentials</nz-list-item>
+              <nz-list-item>Health monitoring system for both application and database services</nz-list-item>
+              <nz-list-item>Log rotation management to prevent disk space issues</nz-list-item>
+              <nz-list-item>Multiple environment file support (.env and .prod.env)</nz-list-item>
+              <nz-list-item>Automated container health checks with retry mechanisms</nz-list-item>
+              <nz-list-item>Production-grade restart policies</nz-list-item>
+            </nz-list>
+          </nz-card>
+        </div>
+</div>
+<div nz-row [nzGutter]="2" style="margin-top: 2rem;">
+    <div nz-col [nzSpan]="12">
+       <nz-card>
+            <li>Application Service:
+                       <ul>
+                         <li>Production-optimized Node.js environment</li>
+                         <li>Configured MongoDB connection with authentication</li>
+                         <li>Health check endpoint monitoring (interval: 1m30s)</li>
+                         <li>JSON log driver with rotation (max 10MB, 3 files)</li>
+                         <li>Automatic restart policy (unless-stopped)</li>
+                       </ul>
+                     </li>
+                     <li>Database Service:
+                       <ul>
+                        <li>Secure MongoDB instance with authentication</li>
+                        <li>Persistent volume storage for data durability</li>
+                        <li>Environment-based configuration</li>
+                        <li>Custom port mapping (30000:27017)</li>
+                        <li>Automatic restart policy (always)</li>
+                       </ul></li>
+                       <li>Security Features:
+              <ul>
+                <li>MongoDB authentication using environment variables</li>
+                <li>Secure connection string with authSource configuration</li>
+                <li>Separate production environment file (.prod.env)</li>
+              </ul>
+            </li>
+       </nz-card>
+    </div>
+    <div nz-col [nzSpan]="12">
+        <nz-card>
+            <ul>
+              <li>Logging:
+                <ul>
+                  <li>JSON format log files for better parsing</li>
+                  <li>Automatic log rotation at 10MB</li>
+                  <li>Retention of last 3 log files</li>
+                </ul>
+              </li>
+              <li>Health Checks:
+                <ul class="list-circle pl-6 mt-2 space-y-2">
+                  <li>Regular health monitoring every 1m30s</li>
+                  <li>6-second timeout for health checks</li>
+                  <li>3 retries before marking container unhealthy</li>
+                  <li>30-second initial grace period</li>
+                </ul>
+              </li>
+            </ul>
+        </nz-card>
+    </div>
+</div>
+<div nz-row [nzGutter]="2" [nzJustify]="'center'" [nzAlign]="'middle'" id="installation-guide">
+  <div nz-col [nzSpan]="24" [align]="'center'">
+    <nz-divider></nz-divider>
+    <nz-steps [nzCurrent]="current" nzDirection="vertical">
+      <nz-step nzTitle=" Clone the Repository" [nzDescription]="mytemplet1p">
+        <ng-template #mytemplet1p>
+          <nz-card style="background-color: rgb(0, 8, 15); color: white;">
+            <p nz-typography style="color: inherit;">
+              #Clone the Repository<br>
+              <code>git clone
+                git&#64;github.com:AnkitBorude/abacus-exam-backend.git</code><br>
+
+              # Navigate to project directory<br>
+
+              <code>cd abacus-exam-backend</code></p>
+            <div *ngIf="current!=0;else nextbuttonTemplet"></div>
+          </nz-card>
+        </ng-template>
+      </nz-step>
+      <nz-step nzTitle="Environment Configuration" [nzDescription]="mytemplet2p">
+        <ng-template #mytemplet2p>
+          <nz-card style="background-color: rgb(0, 8, 15); color: white;">
+            <p nz-typography style="color: inherit;">
+              ##Create .env file<br>
+                <code>touch .env</code><br>
+              ## The <a href="/enviroment-variables">.env file</a> contains common environment variables required for all environments.<br>
+              ##Create .prod.env file<br>
+              <code>touch .prod.env</code><br>
+              ##The <a href="/enviroment-variables">.prod.env</a> file contains production-specific environment variables.<br>
+              ##<b>Make sure of service name/container name in MONGODB_CONNECTION_URL in .prod.env</b><br>
+              ##add MONGODB_CONNECTION_URL only once in either file.<br>
+            </p>
+              <div *ngIf="current!=1;else nextbuttonTemplet"></div>
+            </nz-card>
+          </ng-template>
+        </nz-step>
+        <nz-step nzTitle="Build and Start the Containers for Local Development"
+          [nzDescription]="mytemplet3p">
+          <ng-template #mytemplet3p>
+            <nz-card style="background-color: rgb(0, 8, 15); color: white;">
+              <p nz-typography style="color: inherit;">
+                ##Build and Start the Containers for Local Development:<br>
+                <code>docker-compose -f docker-compose.prod.yml up --build</code><br>
+
+                ##ensure docker daemon is running.
+                ##building first time might take some time.
+              </p>
+              <div *ngIf="current!=2;else nextbuttonTemplet"></div>
+            </nz-card>
+          </ng-template>
+        </nz-step>
+        <nz-step nzTitle="Verify the Setup:"
+          [nzDescription]="mytemplet4p">
+          <ng-template #mytemplet4p>
+            <nz-card style="background-color: rgb(0, 8, 15); color: white;">
+              <p nz-typography style="color: inherit;">
+                1. Check running containers: <code>docker ps</code><br>
+                2. Open browser or Postman<br>
+                3.  Access <code>http://hostname:port</code> where hostname would be name of host (as port would be binded to host machine)<br>
+                4. You should see API Welcome webpage<br>
+                5. json logging driver is being used to store combined error (STDERR) and application log(STDOUT) which can be inspected via <code>docker-compose -f docker-compose.prod.yml logs -f service_name </code><br>
+                6. mongo container has binded to host port 30000, through via root username and password database can be accessed for dump<br>
+              </p>
+              <div *ngIf="current!=3;else nextbuttonTemplet"></div>
+            </nz-card>
+          </ng-template>
+        </nz-step>
+      </nz-steps>
+    </div>
+  </div>
