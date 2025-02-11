@@ -24,7 +24,7 @@
         <nz-timeline-item nzColor="red">
           <strong> Environment Setup ( After Project Clone/Installation
             )</strong><br>
-          <u>.env</u> file with required environment variables<br>
+          <a href="enviroment-variables"><u>.env</u></a>file with required environment variables<br>
           Configuration files in config/ directory for both development and
           production
           (Or use default configuration)<br>
@@ -32,12 +32,8 @@
         </nz-timeline-item>
         <nz-timeline-item nzColor="purple">
           <strong>System Access</strong><br>
-          Verify Port availability (default Node.jsport) PORT 3000<br>
+          Verify Port availability defined in enviroment variable<br>
           Verfiy Read/Write permissions for log files<br>
-          Log path could be configured in COMBINED_LOG_PATH enviroment
-          variable<br>
-          or default application.log and error.log file would be created in
-          project ROOT.<br>
           Verify Network access for MongoDB connection for remote database
         </nz-timeline-item>
       </nz-timeline>
@@ -49,65 +45,7 @@
   <h2 nz-typography>Environment Variables</h2>
   <div nz-col [nzSpan]="24" [align]="'center'">
     <nz-divider></nz-divider>
-    <nz-table nzTemplateMode nzSize="middle" nzBordered style="width: 600px;">
-      <thead>
-        <tr nz-typography>
-          <th style="width: 120px;">Variable</th>
-          <th style="width: 180px;">Values(Only for Demo)</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>NODE_ENV</td>
-          <td>development</td>
-          <td>Node Enviroment either
-            <strong>(production/development)</strong></td>
-        </tr>
-        <tr>
-          <td>APPLICATION_PORT</td>
-          <td>3000</td>
-          <td>Server port number</td>
-        </tr>
-        <tr>
-          <td>MONGODB_CONNECTION_URL</td>
-          <td>mongodb://localhost:27017</td>
-          <td>MongoDB connection url for both enviroment</td>
-        </tr>
-        <tr>
-          <td>ACCESS_TOKEN_SECRET</td>
-          <td>4bT6wGq95Hr44423d43xe</td>
-          <td>Random String as a Secret key for JWT Access token generation</td>
-        </tr>
-        <tr>
-          <td>ACCESS_TOKEN_EXPIRY</td>
-          <td>5m</td>
-          <td>Access Token expiration time.<a
-              href="https://github.com/auth0/node-jsonwebtoken#readme">See
-              More..</a></td>
-        </tr>
-        <tr>
-          <td>REFRESH_TOKEN_SECRET</td>
-          <td>Hr44423d43xe</td>
-          <td>Random String as a Secret key for JWT Access token generation</td>
-        </tr>
-        <tr>
-          <td>REFRESH_TOKEN_EXPIRY</td>
-          <td>1h</td>
-          <td>Refresh Token expiration time.<a
-              href="https://github.com/auth0/node-jsonwebtoken#readme">See
-              More..</a></td>
-        </tr>
-        <tr>
-          <td>COMBINED_LOG_PATH</td>
-          <td>/var/log/combined.log</td>
-          <td>A valid file path to stream the combined logs of application in
-            <strong>production</strong>,
-            by default combined.log file will be created in project root folder
-            for logs, if path not setted</td>
-        </tr>
-      </tbody>
-    </nz-table>
+    <h3><a href="enviroment-variables">See here </a></h3>
   </div>
 </div>
 <nz-divider></nz-divider>
@@ -253,10 +191,6 @@
           <code> npm run lint:fix</code> # Fix ESLint issues<br>
           <code>npm run format:check </code># Check Prettier formatting<br>
           <code> npm run format:fix </code> # Fix Prettier formatting<br>
-          <code>npm run db:dump </code> # Backup database only for Localhost
-          MongoDB<br>
-          <code>npm run db:restore </code> # Restore database only for Localhost
-          MongoDB<br>
         </p>
       </nz-card>
     </div>
