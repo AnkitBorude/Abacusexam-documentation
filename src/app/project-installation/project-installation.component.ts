@@ -3,8 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-project-installation',
-  templateUrl: './project-installation.component.html',
-  styleUrl: './project-installation.component.css'
+  templateUrl: './project-installation.component.html'
 })
 export class ProjectInstallationComponent {
   constructor(private route:ActivatedRoute)
