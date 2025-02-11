@@ -79,93 +79,50 @@
           </nz-card>
         </ng-template>
       </nz-step>
-      <nz-step nzTitle="Install Dependencies" [nzDescription]="mytemplet2">
+      <nz-step nzTitle="Environment Configuration" [nzDescription]="mytemplet2">
         <ng-template #mytemplet2>
           <nz-card style="background-color: rgb(0, 8, 15); color: white;">
             <p nz-typography style="color: inherit;">
-              #Install Dependencies<br>
-              <code>npm install</code><br>
+              ##Create .env file<br>
+                <code>touch .env</code><br>
+              ## The <a href="/enviroment-variables">.env file</a> contains common environment variables required for all environments.<br>
+              ##<b>Make sure of service name/container name in MONGODB_CONNECTION_URL</b>
+            </p>
               <div *ngIf="current!=1;else nextbuttonTemplet"></div>
             </nz-card>
           </ng-template>
         </nz-step>
-        <nz-step nzTitle="Environment Configuration"
+        <nz-step nzTitle="Build and Start the Containers for Local Development"
           [nzDescription]="mytemplet3">
           <ng-template #mytemplet3>
             <nz-card style="background-color: rgb(0, 8, 15); color: white;">
               <p nz-typography style="color: inherit;">
-                ##Create .env file<br>
-                <code>touch .env</code><br>
-                Add environment variables and their respective values to the
-                .env file,
-                using the table from the previous section as a reference.
-                Configure the variables according to the development or
-                production environment.
-                ex.<br>
-                NODE_ENV=development<br>
-                PORT=3000<br>
-                .<br>
-                .<br>
+                ##Build and Start the Containers for Local Development:<br>
+                <code>docker-compose -f docker-compose.dev.yml up --build</code><br>
+
+                ##ensure docker daemon is running.
+                ##building first time might take some time.
               </p>
               <div *ngIf="current!=2;else nextbuttonTemplet"></div>
             </nz-card>
           </ng-template>
         </nz-step>
-        <nz-step nzTitle="Database Setup For Local Development"
+        <nz-step nzTitle="Verify the Setup:"
           [nzDescription]="mytemplet4">
           <ng-template #mytemplet4>
             <nz-card style="background-color: rgb(0, 8, 15); color: white;">
               <p nz-typography style="color: inherit;">
-                # Start MongoDB locally<br>
-                <code>mongod</code><br><br>
-
-                # If using MongoDB Compass, connect using:<br>
-                <code>mongodb://localhost:27017</code>
+                1. Check running containers: <code>docker ps</code><br>
+                2. Open browser or Postman<br>
+                3.  Access <code>http://localhost:port</code> on local
+                developement<br>
+                4. You should see API Welcome webpage<br>
+                5. Ensure all services are running properly using Docker Desktop<br>
+                6. Hot-reloading using nodemon makes change propagation without rebuilding whole project except new package installation<br>
+                7. In Local developement enviroment <code>error.log</code> and <code>application.log</code> files are mounted and binded with host at Root level of project.as well as
+                streamed to console<br>
               </p>
               <div *ngIf="current!=3;else nextbuttonTemplet"></div>
-            </nz-card>
-          </ng-template>
-        </nz-step>
-        <nz-step nzTitle="Start Development/Production Server"
-          [nzDescription]="mytemplet5">
-          <ng-template #mytemplet5>
-            <nz-card style="background-color: rgb(0, 8, 15); color: white;">
-              <p nz-typography style="color: inherit;">
-                # # Start server with nodemon (auto-reload) local
-                developement<br>
-                <code>npm run dev</code><br><br>
-
-                # # Start server on poduction server<br>
-                <code>npm run start</code><br><br>
-
-                # # # Using PM2<br>
-                <code>pm2 start src/index.js --name abacus-exam-api</code>
-              </p>
-              <div *ngIf="current!=4;else nextbuttonTemplet"></div>
-            </nz-card>
-          </ng-template>
-        </nz-step>
-        <nz-step nzTitle="Verify Installation" [nzDescription]="mytemplet6">
-          <ng-template #mytemplet6>
-            <nz-card style="background-color: rgb(0, 8, 15); color: white;">
-              <p nz-typography style="color: inherit;">
-                1. Open browser or Postman<br>
-                2. Access your server's domain/IP with configured port of
-                production Server<br>
-                3. or Access <code>http://localhost:3000</code> on local
-                developement<br>
-                4. You should see the API welcome message<br>
-                5. Check Logs for any error<br>
-                6. In Local developement enviroment <code>error.log</code> and
-                <code>application.log</code>
-                files are maintained at Root level of project.as well as
-                streamed to console<br>
-                7. In Production enviroment combined application and error logs
-                are streamed to <code>
-                  COMBINED_LOG_PATH
-                </code>
-              </p>
-              <div *ngIf="current!=5;else nextbuttonTemplet"></div>
             </nz-card>
           </ng-template>
         </nz-step>
