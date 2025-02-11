@@ -49,6 +49,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { NzResizableModule} from 'ng-zorro-antd/resizable';
 import { ProjectInstallationDockerComponent } from './project-installation-docker/project-installation-docker.component';
 import { EnviromentVariablesComponent } from './enviroment-variables/enviroment-variables.component';
+import { TestingComponent } from './testing/testing.component';
 registerLocaleData(en);
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ registerLocaleData(en);
     NotFoundComponent,
     AuthenticationComponent,
     ProjectInstallationDockerComponent,
-    EnviromentVariablesComponent
+    EnviromentVariablesComponent,
+    TestingComponent
   ],
   imports: [
     BrowserModule,

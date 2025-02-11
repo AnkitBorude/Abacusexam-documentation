@@ -142,7 +142,7 @@
                 1. Open browser or Postman<br>
                 2. Access your server's domain/IP with configured port of
                 production Server<br>
-                3. or Access <code>http://localhost:3000</code> on local
+                3. or Access <code>http://localhost:port</code> on local
                 developement<br>
                 4. You should see the API welcome message<br>
                 5. Check Logs for any error<br>
@@ -152,7 +152,7 @@
                 streamed to console<br>
                 7. In Production enviroment combined application and error logs
                 are streamed to <code>
-                  COMBINED_LOG_PATH
+                  STDOUT and STDERR
                 </code>
               </p>
               <div *ngIf="current!=5;else nextbuttonTemplet"></div>
