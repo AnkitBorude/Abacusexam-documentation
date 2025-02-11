@@ -1,0 +1,121 @@
+<div nz-row [nzGutter]="24" id="enviroment">
+    <h2 nz-typography>Environment Variables</h2>
+    
+    <div nz-col [nzSpan]="24" [align]="'center'">
+      <nz-divider></nz-divider>
+      <h4 nz-typography>Common Enviroment Variables</h4>
+      <p nz-typography>The <code><b>.env</b></code> file contains common environment variables required for all environments.</p>
+      <nz-table nzTemplateMode nzSize="middle" nzBordered style="width: 600px;">
+        <thead>
+          <tr nz-typography>
+            <th style="width: 120px;">Variable</th>
+            <th style="width: 180px;">Example Values</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NODE_ENV</td>
+            <td>development</td>
+            <td>Node Enviroment either
+              <strong>(production/development)</strong></td>
+          </tr>
+          <tr>
+            <td>APPLICATION_PORT</td>
+            <td>3000</td>
+            <td>Server port number</td>
+          </tr>
+          <tr>
+            <td>MONGODB_CONNECTION_URL</td>
+            <td>mongodb://localhost:27017</td>
+            <td>MongoDB connection url for both enviroment</td>
+          </tr>
+          <tr>
+            <td>ACCESS_TOKEN_SECRET</td>
+            <td>4bT6wGq95Hr44423d43xe</td>
+            <td>Random String as a Secret key for JWT Access token generation</td>
+          </tr>
+          <tr>
+            <td>ACCESS_TOKEN_EXPIRY</td>
+            <td>5m</td>
+            <td>Access Token expiration time.<a
+                href="https://github.com/auth0/node-jsonwebtoken#readme">See
+                More..</a></td>
+          </tr>
+          <tr>
+            <td>REFRESH_TOKEN_SECRET</td>
+            <td>Hr44423d43xe</td>
+            <td>Random String as a Secret key for JWT Access token generation</td>
+          </tr>
+          <tr>
+            <td>REFRESH_TOKEN_EXPIRY</td>
+            <td>1h</td>
+            <td>Refresh Token expiration time.<a
+                href="https://github.com/auth0/node-jsonwebtoken#readme">See
+                More..</a></td>
+          </tr>
+          <tr>
+            <td>CORS_WHITELIST</td>
+            <td>www.example.com,192.168.0.1</td>
+            <td>This environment variable defines the list of allowed origins for Cross-Origin Resource Sharing (CORS). 
+                It should be a comma-separated list of domain names that are permitted to make requests to the backend.
+                <b color="red">if not provided then all origins are permitted</b><a
+                href="hhttps://github.com/expressjs/cors#readme">See
+                More..</a></td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+</div>
+<nz-divider></nz-divider>
+<div nz-row [nzGutter]="24">
+    <h4 nz-typography>Production Enviroment Variables (For Docker Only)</h4>
+    <p nz-typography><p>The <code><b>.prod.env</b></code> file contains production-specific environment variables. This file and its variables are only required for the Docker-specific <b>production</b> installation and not for normal installation or docker compose local deployment, 
+        where the <code><b>.env</b></code> file is sufficient for both local and production deployment. 
+        While deploying to <b>production</b>through Docker Compose, the given <code><b>.prod.env</b></code> file must also be created alongside the <code><b>.env</b></code> 
+        file in the root folder of the project.</p>
+</div>
+<div nz-row [nzGutter]="24" id="enviroment">
+    <div nz-col [nzSpan]="24" [align]="'center'">
+      <nz-divider></nz-divider>
+      <h4 nz-typography>Production Enviroment Variables (For Docker Only)</h4>
+      <nz-table nzTemplateMode nzSize="middle" nzBordered style="width: 600px;">
+        <thead>
+          <tr nz-typography>
+            <th style="width: 120px;">Variable</th>
+            <th style="width: 180px;">Example Values</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NODE_ENV</td>
+            <td>production</td>
+            <td>Node Enviroment
+              <strong>production</strong></td>
+          </tr>
+
+          <tr>
+            <td>MONGO_INITDB_ROOT_USERNAME</td>
+            <td>johnDoe</td>
+            <td>mongo user for root mongo container</td>
+          </tr>
+          <tr>
+            <td>MONGO_INITDB_ROOT_PASSWORD</td>
+            <td>pass#123</td>
+            <td>mongo user password for root mongo container</td>
+          </tr>
+          <tr>
+            <td>DB_NAME</td>
+            <td>AbacusApplication</td>
+            <td>Name of document database within mongodb</td>
+          </tr>
+          <tr>
+            <td>MONGODB_CONNECTION_URL</td>
+            <td>mongodb://&#36; &#123;MONGO_INITDB_ROOT_USERNAME &#125;:&#36; &#123;MONGO_INITDB_ROOT_PASSWORD &#125;&#64;database:27017/&#36; &#123;DB_NAME &#125;?authSource=admin</td>
+            <td>MongoDB connection url for cross container connections</td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+</div>
