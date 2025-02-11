@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './project-installation-docker.component.css'
 })
 export class ProjectInstallationDockerComponent {
+  current = 0;
+  pre(): void {
+    this.current -= 1;
+  }
 
+  next(): void {
+    this.current += 1;
+  }
 }

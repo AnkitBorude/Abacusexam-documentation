@@ -10,13 +10,15 @@ import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { EnviromentVariablesComponent } from './enviroment-variables/enviroment-variables.component';
+import { ProjectInstallationDockerComponent } from './project-installation-docker/project-installation-docker.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/enviroment-variables' },
+  { path: '', pathMatch: 'full', redirectTo: '/installation-with-docker' },
   { path: 'welcome', component:WelcomeComponent},
   { path: 'architecture/core', component:CoreProjectComponent},
   {path:'architecture/project-structure',component:ProjectStructureComponent},
   {path:'installation',component:ProjectInstallationComponent},
+  {path:'installation-with-docker',component:ProjectInstallationDockerComponent},
   {path:'key-feature',component:KeyFeaturesComponent},
   {path:'api/:index',component:EndpointinfoComponent},
   {path:'coming-soon',component:ComingSoonComponent},

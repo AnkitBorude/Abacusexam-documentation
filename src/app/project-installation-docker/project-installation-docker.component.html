@@ -1,1 +1,190 @@
-<p>project-installation-docker works!</p>
+<h2 nz-typography>Local Deployment Using Docker</h2>
+<nz-divider></nz-divider>
+<h3 nz-typography>Description</h3>
+<div nz-row [nzGutter]="2">
+        <div nz-col [nzSpan]="24">
+          <nz-card nzTitle="Development Environment Features">
+            <nz-list nzBordered>
+              <nz-list-item>Docker-based development environment with hot-reload capabilities</nz-list-item>
+              <nz-list-item>Node.js application with automatic code synchronization through volume mounting</nz-list-item>
+              <nz-list-item>MongoDB database with persistent storage</nz-list-item>
+              <nz-list-item>Environment variable configuration support</nz-list-item>
+              <nz-list-item>Automatic container restart functionality</nz-list-item>
+              <nz-list-item>Port mapping for both application and database services</nz-list-item>
+            </nz-list>
+          </nz-card>
+        </div>
+</div>
+<div nz-row [nzGutter]="2" style="margin-top: 2rem;">
+    <div nz-col [nzSpan]="12">
+       <nz-card>
+            <li>Application Service:
+                       <ul>
+                         <li>Uses Node.js development environment</li>
+                         <li>Mounts local codebase to /opt/abacus-rest-api for live code updates</li>
+                         <li>Configurable port mapping through APPLICATION_PORT environment variable</li>
+                         <li>Runs in development mode with "npm run dev" command</li>
+                       </ul>
+                     </li>
+                     <li>Database Service:
+                       <ul>
+                         <li>MongoDB instance with data persistence</li>
+                         <li>Port 27018 exposed to host to avoid conflicts with local MongoDB installations</li>
+                         <li>Utilizes Docker volume for persistent data storage</li>
+                       </ul>
+                     </li>
+       </nz-card>
+    </div>
+    <div nz-col [nzSpan]="12">
+        <nz-card>
+            <ul>
+                <li>Hot Reload Development:
+                  <ul class="list-circle pl-6 mt-2 space-y-2">
+                    <li>Code changes are immediately reflected without container rebuilds</li>
+                    <li>Volume mounting ensures seamless development experience</li>
+                  </ul>
+                </li>
+                <li>Dependency Management:
+                  <ul>
+                    <li>Container automatically restarts on crashes (unless-stopped policy)</li>
+                    <li>Application service depends on database availability</li>
+                  </ul>
+                </li>
+                <li>Data Persistence:
+                  <ul>
+                    <li>MongoDB data persists across container restarts</li>
+                    <li>Dedicated Docker volume "mongodb_data" for database storage</li>
+                  </ul>
+                </li>
+              </ul>
+        </nz-card>
+    </div>
+</div>
+<div nz-row [nzGutter]="2" [nzJustify]="'center'" [nzAlign]="'middle'" id="installation-guide">
+  <div nz-col [nzSpan]="24" [align]="'center'">
+    <nz-divider></nz-divider>
+    <nz-steps [nzCurrent]="current" nzDirection="vertical">
+      <nz-step nzTitle=" Clone the Repository" [nzDescription]="mytemplet1">
+        <ng-template #mytemplet1>
+          <nz-card style="background-color: rgb(0, 8, 15); color: white;">
+            <p nz-typography style="color: inherit;">
+              #Clone the Repository<br>
+              <code>git clone
+                git&#64;github.com:AnkitBorude/abacus-exam-backend.git</code><br>
+
+              # Navigate to project directory<br>
+
+              <code>cd abacus-exam-backend</code></p>
+            <div *ngIf="current!=0;else nextbuttonTemplet"></div>
+          </nz-card>
+        </ng-template>
+      </nz-step>
+      <nz-step nzTitle="Install Dependencies" [nzDescription]="mytemplet2">
+        <ng-template #mytemplet2>
+          <nz-card style="background-color: rgb(0, 8, 15); color: white;">
+            <p nz-typography style="color: inherit;">
+              #Install Dependencies<br>
+              <code>npm install</code><br>
+              <div *ngIf="current!=1;else nextbuttonTemplet"></div>
+            </nz-card>
+          </ng-template>
+        </nz-step>
+        <nz-step nzTitle="Environment Configuration"
+          [nzDescription]="mytemplet3">
+          <ng-template #mytemplet3>
+            <nz-card style="background-color: rgb(0, 8, 15); color: white;">
+              <p nz-typography style="color: inherit;">
+                ##Create .env file<br>
+                <code>touch .env</code><br>
+                Add environment variables and their respective values to the
+                .env file,
+                using the table from the previous section as a reference.
+                Configure the variables according to the development or
+                production environment.
+                ex.<br>
+                NODE_ENV=development<br>
+                PORT=3000<br>
+                .<br>
+                .<br>
+              </p>
+              <div *ngIf="current!=2;else nextbuttonTemplet"></div>
+            </nz-card>
+          </ng-template>
+        </nz-step>
+        <nz-step nzTitle="Database Setup For Local Development"
+          [nzDescription]="mytemplet4">
+          <ng-template #mytemplet4>
+            <nz-card style="background-color: rgb(0, 8, 15); color: white;">
+              <p nz-typography style="color: inherit;">
+                # Start MongoDB locally<br>
+                <code>mongod</code><br><br>
+
+                # If using MongoDB Compass, connect using:<br>
+                <code>mongodb://localhost:27017</code>
+              </p>
+              <div *ngIf="current!=3;else nextbuttonTemplet"></div>
+            </nz-card>
+          </ng-template>
+        </nz-step>
+        <nz-step nzTitle="Start Development/Production Server"
+          [nzDescription]="mytemplet5">
+          <ng-template #mytemplet5>
+            <nz-card style="background-color: rgb(0, 8, 15); color: white;">
+              <p nz-typography style="color: inherit;">
+                # # Start server with nodemon (auto-reload) local
+                developement<br>
+                <code>npm run dev</code><br><br>
+
+                # # Start server on poduction server<br>
+                <code>npm run start</code><br><br>
+
+                # # # Using PM2<br>
+                <code>pm2 start src/index.js --name abacus-exam-api</code>
+              </p>
+              <div *ngIf="current!=4;else nextbuttonTemplet"></div>
+            </nz-card>
+          </ng-template>
+        </nz-step>
+        <nz-step nzTitle="Verify Installation" [nzDescription]="mytemplet6">
+          <ng-template #mytemplet6>
+            <nz-card style="background-color: rgb(0, 8, 15); color: white;">
+              <p nz-typography style="color: inherit;">
+                1. Open browser or Postman<br>
+                2. Access your server's domain/IP with configured port of
+                production Server<br>
+                3. or Access <code>http://localhost:3000</code> on local
+                developement<br>
+                4. You should see the API welcome message<br>
+                5. Check Logs for any error<br>
+                6. In Local developement enviroment <code>error.log</code> and
+                <code>application.log</code>
+                files are maintained at Root level of project.as well as
+                streamed to console<br>
+                7. In Production enviroment combined application and error logs
+                are streamed to <code>
+                  COMBINED_LOG_PATH
+                </code>
+              </p>
+              <div *ngIf="current!=5;else nextbuttonTemplet"></div>
+            </nz-card>
+          </ng-template>
+        </nz-step>
+      </nz-steps>
+    </div>
+    <ng-template #nextbuttonTemplet>
+      <button
+        nz-button
+        nzType="default"
+        (click)="pre()"
+        *ngIf="current > 0">
+        <span>Previous</span>
+      </button>
+      <button style="margin-left: 1rem;"
+        nz-button
+        nzType="primary"
+        (click)="next()"
+        *ngIf="current < 10">
+        <span>Next</span>
+      </button>
+    </ng-template>
+  </div>
