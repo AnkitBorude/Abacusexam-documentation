@@ -9,9 +9,10 @@ import { KeyFeaturesComponent } from './key-features/key-features.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { EnviromentVariablesComponent } from './enviroment-variables/enviroment-variables.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
+  { path: '', pathMatch: 'full', redirectTo: '/enviroment-variables' },
   { path: 'welcome', component:WelcomeComponent},
   { path: 'architecture/core', component:CoreProjectComponent},
   {path:'architecture/project-structure',component:ProjectStructureComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'coming-soon',component:ComingSoonComponent},
   {path:'not-found',component:NotFoundComponent},
   {path:'authentication',component:AuthenticationComponent},
+  {path:'enviroment-variables',component:EnviromentVariablesComponent},
   {path:'models',redirectTo:'/coming-soon'},
   {path:'testing',redirectTo:'/coming-soon'},
   {path:'about',redirectTo:'/coming-soon'},
