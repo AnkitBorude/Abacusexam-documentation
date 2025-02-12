@@ -14,7 +14,7 @@ import { ProjectInstallationDockerComponent } from './project-installation-docke
 import { TestingComponent } from './testing/testing.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/installation-with-docker' },
+  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
   { path: 'welcome', component:WelcomeComponent},
   { path: 'architecture/core', component:CoreProjectComponent},
   {path:'architecture/project-structure',component:ProjectStructureComponent},
